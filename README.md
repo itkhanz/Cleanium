@@ -18,6 +18,20 @@ Check out the individual chapters README.md to see the details of topics covered
 * Lambda Expressions
 * Anonymous inner class
 
+## Contents
+
+* [part01 - Functional Programming](src/main/java/com/itkhanz/demos/part01)
+* [part02 - Anonymous Inner Class](src/main/java/com/itkhanz/demos/part02)
+* [part03 - Lambda Expression](src/main/java/com/itkhanz/demos/part03)
+* [part04 - Functional Interface](src/main/java/com/itkhanz/demos/part04)
+* [part05 - More on Lambda Expressions](src/main/java/com/itkhanz/demos/part05)
+* [part06 - Generics and Functional Interface](src/main/java/com/itkhanz/demos/part06)
+* [part07 - Behavior as Method Argument](src/main/java/com/itkhanz/demos/part07)
+* [part08 - Consumer Interface](src/main/java/com/itkhanz/demos/part08)
+* [part09 - Supplier Interface](src/main/java/com/itkhanz/demos/part09)
+* [part10 - Function Interface](src/main/java/com/itkhanz/demos/part10)
+* [part11 - Predicate Interface](src/main/java/com/itkhanz/demos/part11)
+* [part12 - Optional in Java](src/main/java/com/itkhanz/demos/part12)
 
 ### Reference Material:
 
