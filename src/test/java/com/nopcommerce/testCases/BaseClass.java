@@ -11,6 +11,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.testng.annotations.AfterClass;
@@ -33,29 +34,18 @@ public class BaseClass {
 	
 	@BeforeClass
 	@Parameters("browser")
-	public void setup(String br)
+	public void setup(String browser)
 	{
 		logger=Logger.getLogger("ecommerce");
 		PropertyConfigurator.configure("Log4j.properties");
-		
-		if (br.equals("firefox")) {
-			// Firefox Browser
-			System.setProperty("webdriver.gecko.driver",readconfig.getFirefoxPath());
-			driver = new FirefoxDriver();
+
+		switch (browser.toUpperCase()) {
+			case "CHROME" -> driver = new ChromeDriver();
+			case "FIREFOX" -> driver = new FirefoxDriver();
+			case "EDGE" -> driver = new EdgeDriver();
+			default -> throw new RuntimeException(String.format("Invalid browser value provided: %s", browser));
 		}
 
-		else if (br.equals("chrome")) {
-			// opens the browser
-			System.setProperty("webdriver.chrome.driver", readconfig.getChromePath());
-			driver = new ChromeDriver();
-		}
-		
-		else if (br.equals("ie")) {
-			// opens the browser
-			System.setProperty("webdriver.ie.driver", readconfig.getIEPath());
-			driver = new InternetExplorerDriver();
-		}
-				
 	}
 	
 	

@@ -29,6 +29,24 @@ Site under test: https://demo.nopcommerce.com/
 
 ### Part 2 - Getting Started with Code refactoring | Understanding if else block in detail | Cool Tricks
 
+**BAD Practices**
+
+* Poor naming conventions for packages and class names
+* Missing .gitignore file
+* All code under test package
+* Vague variable names
+* Over Commenting makes the code difficult to read
+* Usage of Log4J is not required when you can log directly to extent reports.
+  * Handling log4j in multi threaded environment is complex
+  * Use log4j if you are using any monitoring and observability tools like ELK stack
+
+**Refactoring**
+
+* Use IntelliJ shortcut `Shift + f6` to rename all the instances of variable
+* Use IntelliJ templates to auto-fill certain texts or dependencies
+* Use IntelliJ local history to undo any lost changes
+* 
+
 ### Part 3 - If Else Vs Switch - Adding abstract layer to use Third Party Libraries - Avoid Negations
 
 ### Part 4 - When to use Static Methods - Pros and Cons - All you need to know
