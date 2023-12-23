@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-public class FrameworkConfig {
+public class JsonConfig implements IFrameworkConfig {
 
   private String baseURL;
   private String useremail;

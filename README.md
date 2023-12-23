@@ -61,6 +61,7 @@ Site under test: https://demo.nopcommerce.com/
 **Refactoring**
 
 * Use IntelliJ shortcut `Ctrl + Alt + O` to optimize imports
+* Click on package folder ans use above shortcut to optimize imports for entire package
 * Use Switch statements instead of if-else conditions if the branches are more than two. Switch is also faster
   relatively.
 * Use IntelliJ shortcut `Alt + Enter` to replace the if with switch statements, and selecting replace if to switch
@@ -117,6 +118,9 @@ Site under test: https://demo.nopcommerce.com/
 * Use Jackson data-format to map properties to POJOs
 * Use IntelliJ to surround exception throwing code block with try-catch
 * Use `SneakyThrows` from lombok for managing exceptions thrown
+* uSE `Owner` library to read properties files
+* Create Interfaces for reading configuration files and write type specific implementations to read config from Json,
+  Properties and Yaml
 * 
 
 ### Part 8 - Config Service and Configuration Manager
@@ -131,7 +135,7 @@ Site under test: https://demo.nopcommerce.com/
 
 ### Part 13 - Passing Behaviours To Test using Data Provider - Clean Code - Refactoring Selenium Code
 
-###  
+###   
 
 ###
 
