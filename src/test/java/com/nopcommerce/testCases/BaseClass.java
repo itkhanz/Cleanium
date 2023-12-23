@@ -5,15 +5,15 @@ import java.io.IOException;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.RandomStringUtils;
-import org.apache.log4j.Logger;
-import org.apache.log4j.PropertyConfigurator;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
@@ -30,22 +30,18 @@ public class BaseClass {
 	public String password=readconfig.getPassword();
 	public static WebDriver driver;
 		
-	public static Logger logger; //Added logger
+	public static Logger logger = LogManager.getLogger(BaseClass.class);
 	
 	@BeforeClass
 	@Parameters("browser")
 	public void setup(String browser)
 	{
-		logger=Logger.getLogger("ecommerce");
-		PropertyConfigurator.configure("Log4j.properties");
-
 		switch (browser.toUpperCase()) {
 			case "CHROME" -> driver = new ChromeDriver();
 			case "FIREFOX" -> driver = new FirefoxDriver();
 			case "EDGE" -> driver = new EdgeDriver();
 			default -> throw new RuntimeException(String.format("Invalid browser value provided: %s", browser));
 		}
-
 	}
 	
 	
