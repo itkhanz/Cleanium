@@ -3,6 +3,7 @@ package com.nopcommerce.testCases;
 import com.nopcommerce.pageObjects.AddcustomerPage;
 import com.nopcommerce.pageObjects.LoginPage;
 import com.nopcommerce.utils.RandomService;
+import com.nopcommerce.utils.ScreenshotUtils;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -82,7 +83,7 @@ public class TC_AddCustomerTest_003 extends BaseTest
 		}
 		else
 		{
-			captureScreen(driver,"addNewCustomer");
+			ScreenshotUtils.captureScreenshotAsPNG(driver,"addNewCustomer");
 			Assert.assertTrue(false);
 		}
 	

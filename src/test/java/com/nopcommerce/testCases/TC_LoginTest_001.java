@@ -2,6 +2,7 @@ package com.nopcommerce.testCases;
 
 import java.io.IOException;
 
+import com.nopcommerce.utils.ScreenshotUtils;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -37,7 +38,7 @@ import com.nopcommerce.pageObjects.LoginPage;
 		}
 		else
 		{
-			captureScreen(driver,"loginTest");
+			ScreenshotUtils.captureScreenshotAsPNG(driver,"loginTest");
 			Assert.assertTrue(false);
 			logger.info("Login Failed.....");//logger msg
 		}
