@@ -1,15 +1,15 @@
 package com.nopcommerce.testCases;
 
-import java.io.IOException;
-
+import com.nopcommerce.pageObjects.AddcustomerPage;
+import com.nopcommerce.pageObjects.LoginPage;
+import com.nopcommerce.utils.RandomService;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import com.nopcommerce.pageObjects.AddcustomerPage;
-import com.nopcommerce.pageObjects.LoginPage;
+import java.io.IOException;
 
-public class TC_AddCustomerTest_003 extends BaseClass
+public class TC_AddCustomerTest_003 extends BaseTest
 {
 	
 	@Test
@@ -37,7 +37,7 @@ public class TC_AddCustomerTest_003 extends BaseClass
 		
 		addcust.clickOnAddnew();
 				
-		String email=randomestring()+"@gmail.com";
+		String email= RandomService.getRandomEmail();
 		
 		logger.info("Providing email");
 		addcust.setEmail(email);

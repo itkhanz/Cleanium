@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 import com.nopcommerce.pageObjects.LoginPage;
 import com.nopcommerce.utilities.XLUtils;
 
-public class TC_LoginDDT_002 extends BaseClass
+public class TC_LoginDDT_002 extends BaseTest
 {
 
 	@Test(dataProvider="LoginData")

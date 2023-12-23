@@ -45,9 +45,36 @@ Site under test: https://demo.nopcommerce.com/
 * Use IntelliJ shortcut `Shift + f6` to rename all the instances of variable
 * Use IntelliJ templates to auto-fill certain texts or dependencies
 * Use IntelliJ local history to undo any lost changes
-* 
+
+**Takeaways**
+
+* Change a little - Test a little
+* Keep readability, reusability as a thumb rule
+* Do everything with a reason behind it
+* Think about longer run
+* Use the more often used conditions on top of the if-else conditional logic
+* Live Templates, Local History, and other IntelliJ tricks
 
 ### Part 3 - If Else Vs Switch - Adding abstract layer to use Third Party Libraries - Avoid Negations
+
+
+**BAD Practices**
+
+* 
+
+**Refactoring**
+
+* Use IntelliJ shortcut `Ctrl + Alt + O` to optimize imports
+* Use Switch statements instead of if-else conditions if the branches are more than two. Switch is also faster relatively.
+* Use IntelliJ shortcut `Alt + Enter` to replace the if with switch statements, and selecting replace if to switch
+* Use Enums or toUpperCase() for switch statement
+* Remember Single Responsibility Principle for any class or method
+* Avoid negation in conditionals
+* Use IntelliJ shortcut `Alt + F7` to look for method or property usage inside the project
+* Create a private constructor so the usage of static methods via class instantiation can be prevented
+* Make the class final so it cannot be extended
+* No need to create a variable when it is not used inside method, better to return directly
+* Use third party libraries with an abstract layer for easier maintenance
 
 ### Part 4 - When to use Static Methods - Pros and Cons - All you need to know
 

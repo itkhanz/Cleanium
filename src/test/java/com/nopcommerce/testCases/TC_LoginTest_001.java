@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 import com.nopcommerce.pageObjects.LoginPage;
 
-	public class TC_LoginTest_001 extends BaseClass
+	public class TC_LoginTest_001 extends BaseTest
 	{
 
 	@Test
