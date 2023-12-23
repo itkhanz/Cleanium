@@ -11,6 +11,22 @@ Site under test: https://demo.nopcommerce.com/
 
 ### Part 1 - What and Why | Code Refactoring | Selenium Test Automation Framework - Java |
 
+**Code Refactoring**
+
+* Improves Readability
+* Reduces the maintenance cost
+* More control to the developers
+* Reduced Complexity
+* Working Code -> Clean and Readable Working Code
+
+**What We Will Learn**
+
+* Code Refactoring Techniques
+* How to understand and work with existing techniques
+* IntelliJ tips and tricks
+* Approaching a problem
+* Intricacies of Basics of Programming
+
 ### Part 2 - Getting Started with Code refactoring | Understanding if else block in detail | Cool Tricks
 
 ### Part 3 - If Else Vs Switch - Adding abstract layer to use Third Party Libraries - Avoid Negations
