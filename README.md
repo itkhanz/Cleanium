@@ -45,6 +45,7 @@ Site under test: https://demo.nopcommerce.com/
 * Use IntelliJ shortcut `Shift + f6` to rename all the instances of variable
 * Use IntelliJ templates to auto-fill certain texts or dependencies
 * Use IntelliJ local history to undo any lost changes
+* Use intelliJ shortcut `Alt + Enter` and select the code block to extract it as a separate method
 
 **Takeaways**
 
@@ -88,6 +89,12 @@ Site under test: https://demo.nopcommerce.com/
 
 * Launch a separate browser driver session for each test method
 * Quit the driver only if it exits
+* Do not put conditional assertions
+* Try to have a good readable name for methods
+* Number of arguments to method should be minimal. Use Map, POJO, and Generics.
+* Boolean as method argument should be avoided, instead create two separate methods
+* Avoid try-catch block inside a method
+* 
 * 
 
 ### Part 6 | Using Inheritance in Selenium Framework | Open Closed Principle |

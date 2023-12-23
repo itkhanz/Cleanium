@@ -38,7 +38,7 @@ import com.nopcommerce.pageObjects.LoginPage;
 		}
 		else
 		{
-			ScreenshotUtils.captureScreenshotAsPNG(driver,"loginTest");
+			ScreenshotUtils.captureScreenshotAsPNG("loginTest");
 			Assert.assertTrue(false);
 			logger.info("Login Failed.....");//logger msg
 		}

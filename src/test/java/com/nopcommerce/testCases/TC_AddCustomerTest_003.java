@@ -72,21 +72,11 @@ public class TC_AddCustomerTest_003 extends BaseTest
 		
 		logger.info("validation started....");
 		
-		String msg=driver.findElement(By.tagName("body")).getText();
-		//String msg=driver.findElement(By.xpath("/html/body/div[3]/div[3]/div[1]")).getText();
-		
-		
-		if(msg.contains("The new customer has been added successfully"))
-		{
-			Assert.assertTrue(true);
-			logger.info("test case passed....");
-		}
-		else
-		{
-			ScreenshotUtils.captureScreenshotAsPNG(driver,"addNewCustomer");
-			Assert.assertTrue(false);
-		}
-	
+		String actualMsg=driver.findElement(By.tagName("body")).getText();
+
+		Assert.assertEquals(actualMsg, "The new customer has been added successfully");
+		logger.info("test case passed....");
+
 	}
 	
 	

@@ -4,6 +4,8 @@ import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
+import com.nopcommerce.utils.ScreenshotUtils;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
 import org.testng.TestListenerAdapter;
@@ -55,22 +57,7 @@ public class Reporting extends TestListenerAdapter
 	{
 		logger=extent.createTest(tr.getName()); // create new entry in th report
 		logger.log(Status.FAIL,MarkupHelper.createLabel(tr.getName(),ExtentColor.RED)); // send the passed information to the report with GREEN color highlighted
-		
-		String screenshotPath=System.getProperty("user.dir")+"\\Screenshots\\"+tr.getName()+".png";
-		
-		File f = new File(screenshotPath); 
-		
-		if(f.exists())
-		{
-		try {
-			logger.fail("Screenshot is below:" + logger.addScreenCaptureFromPath(screenshotPath));
-			} 
-		catch (IOException e) 
-				{
-				e.printStackTrace();
-				}
-		}
-		
+		ScreenshotUtils.captureScreenshotAsPNG(tr.getName());
 	}
 	
 	public void onTestSkipped(ITestResult tr)

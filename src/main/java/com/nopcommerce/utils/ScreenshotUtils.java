@@ -9,11 +9,26 @@ import java.io.File;
 import java.io.IOException;
 
 public class ScreenshotUtils {
-  public static void captureScreenshotAsPNG(WebDriver driver, String testName) throws IOException {
+
+  static WebDriver driver;
+  public static void captureScreenshotAsPNG(String testName) {
     TakesScreenshot ts = (TakesScreenshot) driver;
     File source = ts.getScreenshotAs(OutputType.FILE);
     File target = new File(System.getProperty("user.dir") + "/Screenshots/" + testName + ".png");
-    FileUtils.copyFile(source, target);
-    System.out.println("Screenshot taken");
+    copyFile(source, target);
+  }
+
+  private static void copyFile(File source, File target) {
+    try {
+      FileUtils.copyFile(source, target);
+      System.out.println("Screenshot saved");
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+  }
+
+  public static String captureScreenshotAsBase64Image() {
+    TakesScreenshot ts = (TakesScreenshot) driver;
+    return  ts.getScreenshotAs(OutputType.BASE64);
   }
 }
