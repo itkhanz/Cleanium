@@ -1,5 +1,6 @@
 package com.nopcommerce.testCases;
 
+import com.nopcommerce.config.PropertyFileReaderImpl;
 import com.nopcommerce.driver.DriverFactory;
 import com.nopcommerce.utilities.ReadConfig;
 import org.apache.commons.io.FileUtils;
@@ -26,18 +27,18 @@ public class BaseTest {
 	public String baseURL=readconfig.getApplicationURL();
 	public String username=readconfig.getUseremail();
 	public String password=readconfig.getPassword();
-	
+
 	@BeforeMethod
 	@Parameters("browser")
-	public void setupDriver(String browser)
-	{
+	public void setupDriver(String browser) {
 		//TODO create a threadsafe DriverManager and use it to get driver
 		driver = DriverFactory.getDriver(browser);
+
+		System.out.println(new PropertyFileReaderImpl().getConfiguration().getUseremail());
 	}
-	
-	@AfterMethod
-	void tearDownDriver()
-	{
+
+	@AfterMethod(alwaysRun = true)
+	void tearDownDriver() {
 		if (driver!=null) {
 			driver.quit();
 		}

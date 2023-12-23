@@ -1,7 +1,7 @@
 # Cleanium
 
-This project showcases the clean coding best practices and design patterns for test automation using Java and Selenium WebDriver
-
+This project showcases the clean coding best practices and design patterns for test automation using Java and Selenium
+WebDriver
 
 ## Code Refactoring - Testing Mini Bytes
 
@@ -37,8 +37,8 @@ Site under test: https://demo.nopcommerce.com/
 * Vague variable names
 * Over Commenting makes the code difficult to read
 * Usage of Log4J is not required when you can log directly to extent reports.
-  * Handling log4j in multi threaded environment is complex
-  * Use log4j if you are using any monitoring and observability tools like ELK stack
+    * Handling log4j in multi threaded environment is complex
+    * Use log4j if you are using any monitoring and observability tools like ELK stack
 
 **Refactoring**
 
@@ -61,7 +61,8 @@ Site under test: https://demo.nopcommerce.com/
 **Refactoring**
 
 * Use IntelliJ shortcut `Ctrl + Alt + O` to optimize imports
-* Use Switch statements instead of if-else conditions if the branches are more than two. Switch is also faster relatively.
+* Use Switch statements instead of if-else conditions if the branches are more than two. Switch is also faster
+  relatively.
 * Use IntelliJ shortcut `Alt + Enter` to replace the if with switch statements, and selecting replace if to switch
 * Use Enums or toUpperCase() for switch statement
 * Remember Single Responsibility Principle for any class or method
@@ -81,7 +82,7 @@ Site under test: https://demo.nopcommerce.com/
 * static methods does not support inheritance and overriding
 * you can replace constructors with static methods to initialize classes
 * Create a factory class with static method to create driver
-* 
+*
 
 ### Part 5 - How to write clean method | Clean code techniques | Rules to follow before writing a method
 
@@ -102,7 +103,11 @@ Site under test: https://demo.nopcommerce.com/
 
 * Prefer to save the screenshot as Base64 Image and attach to report
 * Do not use hard-coded paths
-* Make the Utils Package Private so that only the abstract service layer class within same package can access these methods
+* Make the Utils Package Private so that only the abstract service layer class within same package can access these
+  methods
+* Start the interface name with `I` so the reader can see it as interface, and append the `Impl` to implementing classes
+* A class should be open for extension but closed for modification. Therefore we created interface for config files
+  reading, so each file type can implement this interface separately.
 * 
 
 ### Part 7 | What is Marker Interface | sneaky Throws | More about Open Close Principle |
@@ -119,7 +124,7 @@ Site under test: https://demo.nopcommerce.com/
 
 ### Part 13 - Passing Behaviours To Test using Data Provider - Clean Code - Refactoring Selenium Code
 
-### 
+###  
 
 ###
 
