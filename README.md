@@ -108,9 +108,12 @@ Site under test: https://demo.nopcommerce.com/
 * Start the interface name with `I` so the reader can see it as interface, and append the `Impl` to implementing classes
 * A class should be open for extension but closed for modification. Therefore we created interface for config files
   reading, so each file type can implement this interface separately.
-* 
 
 ### Part 7 | What is Marker Interface | sneaky Throws | More about Open Close Principle |
+
+**Refactoring**
+
+* 
 
 ### Part 8 - Config Service and Configuration Manager
 
