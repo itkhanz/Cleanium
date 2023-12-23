@@ -1,5 +1,6 @@
 package com.nopcommerce.testCases;
 
+import com.nopcommerce.driver.DriverFactory;
 import com.nopcommerce.utilities.ReadConfig;
 import org.apache.commons.io.FileUtils;
 import org.apache.logging.log4j.LogManager;
@@ -32,12 +33,7 @@ public class BaseTest {
 	@Parameters("browser")
 	public void setupDriver(String browser)
 	{
-		switch (browser.toUpperCase()) {
-			case "CHROME" -> driver = new ChromeDriver();
-			case "FIREFOX" -> driver = new FirefoxDriver();
-			case "EDGE" -> driver = new EdgeDriver();
-			default -> throw new RuntimeException(String.format("Invalid browser value provided: %s", browser));
-		}
+		driver = DriverFactory.getDriver(browser);
 	}
 	
 	@AfterClass

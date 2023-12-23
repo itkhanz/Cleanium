@@ -1,5 +1,8 @@
 package com.nopcommerce.utils;
 
+/*
+Abstract  layer on top of RandomUtils (which could be a third party library)
+ */
 public final class RandomService {
   private RandomService() {}
 

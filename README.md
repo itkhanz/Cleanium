@@ -57,11 +57,6 @@ Site under test: https://demo.nopcommerce.com/
 
 ### Part 3 - If Else Vs Switch - Adding abstract layer to use Third Party Libraries - Avoid Negations
 
-
-**BAD Practices**
-
-* 
-
 **Refactoring**
 
 * Use IntelliJ shortcut `Ctrl + Alt + O` to optimize imports
@@ -69,7 +64,7 @@ Site under test: https://demo.nopcommerce.com/
 * Use IntelliJ shortcut `Alt + Enter` to replace the if with switch statements, and selecting replace if to switch
 * Use Enums or toUpperCase() for switch statement
 * Remember Single Responsibility Principle for any class or method
-* Avoid negation in conditionals
+* Avoid negation in conditionals for better readability
 * Use IntelliJ shortcut `Alt + F7` to look for method or property usage inside the project
 * Create a private constructor so the usage of static methods via class instantiation can be prevented
 * Make the class final so it cannot be extended
@@ -77,6 +72,15 @@ Site under test: https://demo.nopcommerce.com/
 * Use third party libraries with an abstract layer for easier maintenance
 
 ### Part 4 - When to use Static Methods - Pros and Cons - All you need to know
+
+**Refactoring**
+
+* use static methods when behavior of method is same for all threads.
+* scope of static methods is tied to class, it starts when JVM starts and end when your program finishes
+* static methods does not support inheritance and overriding
+* you can replace constructors with static methods to initialize classes
+* Create a factory class with static method to create driver
+* 
 
 ### Part 5 - How to write clean method | Clean code techniques | Rules to follow before writing a method
 
