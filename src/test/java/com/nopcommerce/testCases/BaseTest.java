@@ -11,9 +11,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Parameters;
+import org.testng.annotations.*;
 
 import java.io.File;
 import java.io.IOException;
@@ -29,17 +27,19 @@ public class BaseTest {
 	public String username=readconfig.getUseremail();
 	public String password=readconfig.getPassword();
 	
-	@BeforeClass
+	@BeforeMethod
 	@Parameters("browser")
 	public void setupDriver(String browser)
 	{
 		driver = DriverFactory.getDriver(browser);
 	}
 	
-	@AfterClass
+	@AfterMethod
 	void tearDownDriver()
 	{
-		driver.quit();
+		if (driver!=null) {
+			driver.quit();
+		}
 	}
 
 	public void captureScreen(WebDriver driver, String tname) throws IOException {

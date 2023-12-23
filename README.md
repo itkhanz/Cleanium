@@ -84,6 +84,12 @@ Site under test: https://demo.nopcommerce.com/
 
 ### Part 5 - How to write clean method | Clean code techniques | Rules to follow before writing a method
 
+**Refactoring**
+
+* Launch a separate browser driver session for each test method
+* Quit the driver only if it exits
+* 
+
 ### Part 6 | Using Inheritance in Selenium Framework | Open Closed Principle |
 
 ### Part 7 | What is Marker Interface | sneaky Throws | More about Open Close Principle |
