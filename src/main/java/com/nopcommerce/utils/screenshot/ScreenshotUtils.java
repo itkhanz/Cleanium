@@ -9,7 +9,7 @@ public class ScreenshotUtils {
   //TODO make driver thread-safe
   static WebDriver driver;
 
-  public static String captureScreenshotAsBase64String() {
+  static String captureScreenshotAsBase64String() {
     TakesScreenshot ts = (TakesScreenshot) driver;
     return  ts.getScreenshotAs(OutputType.BASE64);
   }

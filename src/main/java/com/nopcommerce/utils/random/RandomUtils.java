@@ -9,7 +9,7 @@ public final class RandomUtils {
   //This method can change only when:
   //1. There is a change in business requirement
   //2. There is a change in third party library
-  public static String getRandomString(int numOfDigits) {
+  static String getRandomString(int numOfDigits) {
     //perform the third party library change here
     return  RandomStringUtils.randomAlphabetic(numOfDigits);
   }
