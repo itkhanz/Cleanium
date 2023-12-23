@@ -113,6 +113,10 @@ Site under test: https://demo.nopcommerce.com/
 
 **Refactoring**
 
+* create POJO with lombok
+* Use Jackson data-format to map properties to POJOs
+* Use IntelliJ to surround exception throwing code block with try-catch
+* Use `SneakyThrows` from lombok for managing exceptions thrown
 * 
 
 ### Part 8 - Config Service and Configuration Manager

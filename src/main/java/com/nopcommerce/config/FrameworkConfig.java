@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-public class FrameworkProps {
+public class FrameworkConfig {
 
   private String baseURL;
   private String useremail;

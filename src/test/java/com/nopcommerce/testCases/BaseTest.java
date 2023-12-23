@@ -1,21 +1,12 @@
 package com.nopcommerce.testCases;
 
-import com.nopcommerce.config.PropertyFileReaderImpl;
+import com.nopcommerce.config.reader.PropertyReaderImpl;
 import com.nopcommerce.driver.DriverFactory;
 import com.nopcommerce.utilities.ReadConfig;
-import org.apache.commons.io.FileUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.*;
-
-import java.io.File;
-import java.io.IOException;
 
 public class BaseTest {
 
@@ -34,7 +25,7 @@ public class BaseTest {
 		//TODO create a threadsafe DriverManager and use it to get driver
 		driver = DriverFactory.getDriver(browser);
 
-		System.out.println(new PropertyFileReaderImpl().getConfiguration().getUseremail());
+		System.out.println(new PropertyReaderImpl().getConfiguration().getUseremail());
 	}
 
 	@AfterMethod(alwaysRun = true)
