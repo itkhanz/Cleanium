@@ -2,8 +2,7 @@ package com.nopcommerce.testCases;
 
 import com.nopcommerce.pageObjects.AddcustomerPage;
 import com.nopcommerce.pageObjects.LoginPage;
-import com.nopcommerce.utils.RandomService;
-import com.nopcommerce.utils.ScreenshotUtils;
+import com.nopcommerce.utils.random.RandomService;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;

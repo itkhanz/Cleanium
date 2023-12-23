@@ -31,6 +31,7 @@ public class BaseTest {
 	@Parameters("browser")
 	public void setupDriver(String browser)
 	{
+		//TODO create a threadsafe DriverManager and use it to get driver
 		driver = DriverFactory.getDriver(browser);
 	}
 	

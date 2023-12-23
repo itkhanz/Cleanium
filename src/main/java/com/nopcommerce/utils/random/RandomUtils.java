@@ -1,4 +1,4 @@
-package com.nopcommerce.utils;
+package com.nopcommerce.utils.random;
 
 import org.apache.commons.lang3.RandomStringUtils;
 

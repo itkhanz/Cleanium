@@ -94,10 +94,16 @@ Site under test: https://demo.nopcommerce.com/
 * Number of arguments to method should be minimal. Use Map, POJO, and Generics.
 * Boolean as method argument should be avoided, instead create two separate methods
 * Avoid try-catch block inside a method
-* 
-* 
+* Do not call a complex method calls inside if() statement
 
 ### Part 6 | Using Inheritance in Selenium Framework | Open Closed Principle |
+
+**Refactoring**
+
+* Prefer to save the screenshot as Base64 Image and attach to report
+* Do not use hard-coded paths
+* Make the Utils Package Private so that only the abstract service layer class within same package can access these methods
+* 
 
 ### Part 7 | What is Marker Interface | sneaky Throws | More about Open Close Principle |
 

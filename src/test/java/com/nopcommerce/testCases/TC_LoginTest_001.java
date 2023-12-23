@@ -2,7 +2,7 @@ package com.nopcommerce.testCases;
 
 import java.io.IOException;
 
-import com.nopcommerce.utils.ScreenshotUtils;
+import com.nopcommerce.utils.screenshot.ScreenshotUtils;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 

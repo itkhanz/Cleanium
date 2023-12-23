@@ -1,11 +1,9 @@
 package com.nopcommerce.utilities;
 
-import java.io.File;
-import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import com.nopcommerce.utils.ScreenshotUtils;
+import com.nopcommerce.utils.screenshot.ScreenshotService;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
 import org.testng.TestListenerAdapter;
@@ -57,7 +55,7 @@ public class Reporting extends TestListenerAdapter
 	{
 		logger=extent.createTest(tr.getName()); // create new entry in th report
 		logger.log(Status.FAIL,MarkupHelper.createLabel(tr.getName(),ExtentColor.RED)); // send the passed information to the report with GREEN color highlighted
-		ScreenshotUtils.captureScreenshotAsPNG(tr.getName());
+		ScreenshotService.getScreenShotAsBase64();
 	}
 	
 	public void onTestSkipped(ITestResult tr)

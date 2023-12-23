@@ -1,4 +1,4 @@
-package com.nopcommerce.utils;
+package com.nopcommerce.utils.random;
 
 /*
 Abstract  layer on top of RandomUtils (which could be a third party library)
