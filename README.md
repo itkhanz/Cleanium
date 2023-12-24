@@ -118,12 +118,16 @@ Site under test: https://demo.nopcommerce.com/
 * Use Jackson data-format to map properties to POJOs
 * Use IntelliJ to surround exception throwing code block with try-catch
 * Use `SneakyThrows` from lombok for managing exceptions thrown
-* uSE `Owner` library to read properties files
+* Use `Owner` library to read properties files
 * Create Interfaces for reading configuration files and write type specific implementations to read config from Json,
   Properties and Yaml
-* 
 
 ### Part 8 - Config Service and Configuration Manager
+
+**Refactoring**
+
+* create an abstraction utility (service layer) for the properties configuration
+* 
 
 ### Part 9 - Managing Page Layers using Composition - Create Dynamic Xpath and avoid multiple elements
 
