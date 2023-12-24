@@ -1,4 +1,4 @@
-package com.nopcommerce.utils.properties;
+package com.itkhanz.nopcommerce.utils.properties;
 
 
 public class ConfigService {

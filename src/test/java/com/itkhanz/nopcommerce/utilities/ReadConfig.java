@@ -1,4 +1,4 @@
-package com.nopcommerce.utilities;
+package com.itkhanz.nopcommerce.utilities;
 
 import java.io.File;
 import java.io.FileInputStream;

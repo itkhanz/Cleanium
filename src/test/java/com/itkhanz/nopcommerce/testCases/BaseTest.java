@@ -1,4 +1,4 @@
-package com.nopcommerce.testCases;
+package com.itkhanz.nopcommerce.testCases;
 
 import com.itkhanz.core.browser.BrowserManager;
 import com.itkhanz.core.driver.DriverFactory;

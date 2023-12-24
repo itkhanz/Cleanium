@@ -1,7 +1,7 @@
-package com.nopcommerce.testCases;
+package com.itkhanz.nopcommerce.testCases;
 
-import com.nopcommerce.pageObjects.LoginPage;
-import com.nopcommerce.utilities.XLUtils;
+import com.itkhanz.nopcommerce.pageObjects.LoginPage;
+import com.itkhanz.nopcommerce.utilities.XLUtils;
 import com.itkhanz.nopcommerce.utils.properties.ConfigService;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
@@ -50,7 +50,7 @@ public class TC_LoginDDT_002 extends BaseTest
 		
 		String path=System.getProperty("user.dir")+"/src/test/java/com/nopcommerce/testData/LoginData.xlsx";
 		
-		int rownum=XLUtils.getRowCount(path,"Sheet1");
+		int rownum= XLUtils.getRowCount(path,"Sheet1");
 		int colcount=XLUtils.getCellCount(path, "Sheet1",1);
 		
 		String logindata[][]=new String[rownum][colcount];

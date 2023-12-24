@@ -1,7 +1,7 @@
-package com.nopcommerce.utils.properties;
+package com.itkhanz.nopcommerce.utils.properties;
 
-import com.nopcommerce.config.IPropertyConfig;
-import com.nopcommerce.config.reader.PropertyReaderImpl;
+import com.itkhanz.nopcommerce.config.IPropertyConfig;
+import com.itkhanz.nopcommerce.config.reader.PropertyReaderImpl;
 
 /*
 Configuration Manager for all config files i.e. Properties, JSON, YAML

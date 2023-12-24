@@ -1,9 +1,9 @@
-package com.nopcommerce.utilities;
+package com.itkhanz.nopcommerce.utilities;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import com.itkhanz.nopcommerce.utils.screenshot.ScreenshotService;
+import com.itkhanz.core.utils.screenshot.ScreenshotService;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
 import org.testng.TestListenerAdapter;

@@ -1,6 +1,6 @@
-package com.nopcommerce.config.reader;
+package com.itkhanz.nopcommerce.config.reader;
 
-import com.nopcommerce.config.IFrameworkConfig;
+import com.itkhanz.nopcommerce.config.IFrameworkConfig;
 
 public interface IConfigReader {
   IFrameworkConfig getConfiguration();

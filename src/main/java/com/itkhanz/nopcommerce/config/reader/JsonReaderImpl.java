@@ -1,7 +1,7 @@
-package com.nopcommerce.config.reader;
+package com.itkhanz.nopcommerce.config.reader;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.nopcommerce.config.JsonConfig;
+import com.itkhanz.nopcommerce.config.JsonConfig;
 import lombok.SneakyThrows;
 
 import java.io.File;

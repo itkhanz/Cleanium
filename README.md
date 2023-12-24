@@ -83,7 +83,6 @@ Site under test: https://demo.nopcommerce.com/
 * static methods does not support inheritance and overriding
 * you can replace constructors with static methods to initialize classes
 * Create a factory class with static method to create driver
-*
 
 ### Part 5 - How to write clean method | Clean code techniques | Rules to follow before writing a method
 
@@ -140,15 +139,113 @@ Site under test: https://demo.nopcommerce.com/
 * Abstract the element actions inside page layers and focus on user action in tests
 * create WaitFactory to handle explicit waits and waiting strategies with different wait durations
 * create element actions class to handle WebElement actions with waiting
+* Use IntelliJ context menu to generate Getters for By locators with builder pattern
+* split page into reusable components e.g. header, leftmenu, footer
 * 
 
-### Part 10 - Using Generics as Method Return Type
+### Part 10 - Enhanced Boilerplate Framework
 
-### Part 11 - Struggling to manage Test Data Effectively in Selenium - Learn it now in 30 min
+**Refactoring**
 
-### Part 12 - Polymorphism in Selenium Framework | Choose different behaviors at runtime | Clean code |
+* This section introduced some further enhancements to the existing framework by myself
+* created core framework structure which can be reused across projects
+* created Element actions, driver manager, waits, and other interaction utility classes
+* TODO: still needs lots of refinements like proper configuration, logging management, reporting etc.
 
-### Part 13 - Passing Behaviours To Test using Data Provider - Clean Code - Refactoring Selenium Code
+```java
+//****************************************************************
+//***************** Element Actions *****************************
+//****************************************************************
+By elementLocator = By.id("xyz");
+ElementActions.click(elementLocator);
+ElementActions.type(elementLocator, "text");
+ElementActions.clear(elementLocator);
+String attr = ElementActions.getAttribute(elementLocator, "href");
+String text = ElementActions.getText(elementLocator);
+boolean isDisplayed = ElementActions.isDisplayed(elementLocator);
+boolean isEnabled = ElementActions.isEnabled(elementLocator);
+boolean isSelected = ElementActions.isSelected(elementLocator);
+
+//****************************************************************
+//***************** Alerts Actions *****************************
+//****************************************************************
+Interactions.alerts().accept();
+Interactions.alerts().dismiss();
+Interactions.alerts().type("hello");
+Interactions.alerts().getText();
+
+//****************************************************************
+//***************** Frames Actions *****************************
+//****************************************************************
+Interactions.frames().switchToFrameByID("email");
+Interactions.frames().switchToFrameByName("email");
+Interactions.frames().switchToFrameByIndex(2);
+Interactions.frames().switchToFrameByElement(By.xpath("//iframe"));
+
+//****************************************************************
+//***************** Navigation Actions *****************************
+//****************************************************************
+Interactions.navigation().loadUrl(ConfigService.getBaseUrl());
+Interactions.navigation().refresh();
+Interactions.navigation().navigateBackward();
+Interactions.navigation().navigateForward();
+
+//****************************************************************
+//***************** Windows Actions *****************************
+//****************************************************************
+Interactions.windows().getHandles();
+Interactions.windows().getHandle();
+Interactions.windows().switchTo("handleName");
+Interactions.windows().createAndSwitchToNewWindow();
+Interactions.windows().createAndSwitchToNewTab();
+Interactions.windows().maximize();
+Interactions.windows().minimize();
+Interactions.windows().fullscreen();
+Interactions.windows().setSize(1024, 768);
+Interactions.windows().getSize();
+Interactions.windows().close();
+
+
+//****************************************************************
+//***************** Mouse Actions *****************************
+//****************************************************************
+Interactions.mouse().click(By.id("locator"));
+Interactions.mouse().doubleClick(By.id("locator"));
+Interactions.mouse().contextClick(By.id("locator"));
+Interactions.mouse().clickAndHold(By.id("locator"));
+Interactions.mouse().hover(By.id("locator"));
+
+//****************************************************************
+//***************** Keyboard Actions *****************************
+//****************************************************************
+// Select the Current Address using CTRL + A
+Interactions.keyboard().keyDown(Keys.CONTROL).sendKeys("a").keyUp(Keys.CONTROL).performActions();
+// Copy the Current Address using CTRL + C
+Interactions.keyboard().keyDown(Keys.CONTROL).sendKeys("c").keyUp(Keys.CONTROL).performActions();
+//Press the TAB Key to Switch Focus to Permanent Address
+Interactions.keyboard().sendKeys(Keys.TAB).performActions();
+//Paste the Address in the Permanent Address field using CTRL + V
+Interactions.keyboard().keyDown(Keys.CONTROL).sendKeys("v").keyUp(Keys.CONTROL).performActions();
+
+//****************************************************************
+//***************** Javascript Executor Utils *****************************
+//****************************************************************
+JSUtils.scrollToBottomOfPage();
+JSUtils.scrollElementIntoView(By.id("Syntax"));
+JSUtils.scrollByPixel(0, 300);
+```
+
+### Part 11 - Using Generics as Method Return Type
+
+**Refactoring**
+
+* 
+
+### Part 12 - Struggling to manage Test Data Effectively in Selenium - Learn it now in 30 min
+
+### Part 13 - Polymorphism in Selenium Framework | Choose different behaviors at runtime | Clean code |
+
+### Part 14 - Passing Behaviours To Test using Data Provider - Clean Code - Refactoring Selenium Code
 
 ###   
 

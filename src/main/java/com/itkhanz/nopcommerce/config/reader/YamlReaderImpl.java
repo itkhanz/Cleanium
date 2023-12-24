@@ -1,6 +1,6 @@
-package com.nopcommerce.config.reader;
+package com.itkhanz.nopcommerce.config.reader;
 
-import com.nopcommerce.config.YamlConfig;
+import com.itkhanz.nopcommerce.config.YamlConfig;
 
 public class YamlReaderImpl implements IConfigReader{
   @Override

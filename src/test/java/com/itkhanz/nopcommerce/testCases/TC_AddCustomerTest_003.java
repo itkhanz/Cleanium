@@ -1,7 +1,7 @@
-package com.nopcommerce.testCases;
+package com.itkhanz.nopcommerce.testCases;
 
-import com.nopcommerce.pageObjects.AddcustomerPage;
-import com.nopcommerce.pageObjects.LoginPage;
+import com.itkhanz.nopcommerce.pageObjects.AddcustomerPage;
+import com.itkhanz.nopcommerce.pageObjects.LoginPage;
 import com.itkhanz.nopcommerce.utils.properties.ConfigService;
 import com.itkhanz.nopcommerce.utils.random.RandomService;
 import org.openqa.selenium.By;

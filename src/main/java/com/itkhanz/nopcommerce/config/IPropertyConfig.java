@@ -1,4 +1,4 @@
-package com.nopcommerce.config;
+package com.itkhanz.nopcommerce.config;
 
 import org.aeonbits.owner.Config;
 

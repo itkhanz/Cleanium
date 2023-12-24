@@ -5,17 +5,18 @@
 	
 	<listeners>
 	
-		<listener class-name="com.nopcommerce.utilities.Reporting" />
+		<listener class-name="utilities.com.itkhanz.nopcommerce.Reporting" />
 	</listeners>
 	
 	
 	<test name="nopcommerceTest1">
 		<parameter name="browser" value="chrome" />
 		<classes>
-			  <!--<class name="com.nopcommerce.testCases.TC_LoginTest_001" /-->>
-			<!--<class name="com.nopcommerce.testCases.TC_LoginDDT_002" />-->
-			<class name="com.nopcommerce.testCases.TC_AddCustomerTest_003" />
-			
+			  <!--<class name="testCases.com.itkhanz.nopcommerce.TC_LoginTest_001" /-->>
+			<!--<class name="testCases.com.itkhanz.nopcommerce.TC_LoginDDT_002" />-->
+			<!--<class name="testCases.com.itkhanz.nopcommerce.TC_AddCustomerTest_003" />-->
+			<class name="testCases.com.itkhanz.nopcommerce.AddCustomerTest" />
+
 		</classes>
 	</test>
 	
@@ -23,7 +24,7 @@
 	<!--  <test name="nopcommerceTest2">
 		<parameter name="browser" value="firefox" />
 		<classes>
-			<class name="com.nopcommerce.testCases.TC_LoginTest_001" />
+			<class name="testCases.com.itkhanz.nopcommerce.TC_LoginTest_001" />
 		</classes>
 	</test>
 	
@@ -31,7 +32,7 @@
 	<test name="nopcommerceTest3">
 		<parameter name="browser" value="ie" />
 		<classes>
-			<class name="com.nopcommerce.testCases.TC_LoginTest_001" />
+			<class name="testCases.com.itkhanz.nopcommerce.TC_LoginTest_001" />
 		</classes>
 	</test> -->
 

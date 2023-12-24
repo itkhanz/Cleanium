@@ -1,4 +1,4 @@
-package com.nopcommerce.config;
+package com.itkhanz.nopcommerce.config;
 
 /*
 Marker interface as a parent for Owner IPropertyConfig, and JsonConfig

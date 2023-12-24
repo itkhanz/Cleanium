@@ -1,6 +1,6 @@
-package com.nopcommerce.config.reader;
+package com.itkhanz.nopcommerce.config.reader;
 
-import com.nopcommerce.config.IPropertyConfig;
+import com.itkhanz.nopcommerce.config.IPropertyConfig;
 import lombok.SneakyThrows;
 import org.aeonbits.owner.ConfigFactory;
 

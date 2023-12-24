@@ -1,4 +1,4 @@
-package com.nopcommerce.config;
+package com.itkhanz.nopcommerce.config;
 
 public class YamlConfig implements IFrameworkConfig{
 }
