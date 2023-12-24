@@ -129,9 +129,18 @@ Site under test: https://demo.nopcommerce.com/
 * create an abstraction utility (service layer) for the properties configuration
 * create a ConfigManager for all kind of configuration files
 * create a thread-safe Driver Manager to manage the driver instance throughout framework
-* 
 
 ### Part 9 - Managing Page Layers using Composition - Create Dynamic Xpath and avoid multiple elements
+
+**Refactoring**
+
+* Improve naming conventions
+* create manageable page layers (use design patterns like facade, composition)
+* Do not use Selenium PageFactory (it prevents building dynamic xpath locators, and causes StaleElementException)
+* Abstract the element actions inside page layers and focus on user action in tests
+* create WaitFactory to handle explicit waits and waiting strategies with different wait durations
+* create element actions class to handle WebElement actions with waiting
+* 
 
 ### Part 10 - Using Generics as Method Return Type
 
