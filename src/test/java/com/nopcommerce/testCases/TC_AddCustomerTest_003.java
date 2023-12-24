@@ -2,6 +2,7 @@ package com.nopcommerce.testCases;
 
 import com.nopcommerce.pageObjects.AddcustomerPage;
 import com.nopcommerce.pageObjects.LoginPage;
+import com.nopcommerce.utils.properties.ConfigService;
 import com.nopcommerce.utils.random.RandomService;
 import org.openqa.selenium.By;
 import org.testng.Assert;
@@ -15,13 +16,13 @@ public class TC_AddCustomerTest_003 extends BaseTest
 	@Test
 	public void addNewCustomer() throws IOException, InterruptedException
 	{
-		driver.get(baseURL);
+		driver.get(ConfigService.getBaseUrl());
 		
 		LoginPage lp=new LoginPage(driver);
-		lp.setUserName(username);
+		lp.setUserName(ConfigService.getUserEmail());
 		logger.info("User name is provided");
 		
-		lp.setPassword(password);
+		lp.setPassword(ConfigService.getPassword());
 		logger.info("password is provided");
 		
 		lp.clickLogin();

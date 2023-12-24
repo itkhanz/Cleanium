@@ -2,6 +2,7 @@ package com.nopcommerce.testCases;
 
 import java.io.IOException;
 
+import com.nopcommerce.utils.properties.ConfigService;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -16,7 +17,7 @@ public class TC_LoginDDT_002 extends BaseTest
 	
 	public void loginTest(String user, String pwd) throws InterruptedException{
 		
-		driver.get(baseURL);
+		driver.get(ConfigService.getBaseUrl());
 		driver.manage().window().maximize(); 
 		
 		LoginPage lp = new LoginPage(driver);

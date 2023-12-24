@@ -127,6 +127,7 @@ Site under test: https://demo.nopcommerce.com/
 **Refactoring**
 
 * create an abstraction utility (service layer) for the properties configuration
+* create a ConfigManager for all kind of configuration files
 * 
 
 ### Part 9 - Managing Page Layers using Composition - Create Dynamic Xpath and avoid multiple elements

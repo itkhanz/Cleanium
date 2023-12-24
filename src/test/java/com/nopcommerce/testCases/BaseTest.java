@@ -13,19 +13,11 @@ public class BaseTest {
 	public static WebDriver driver;
 	public static Logger logger = LogManager.getLogger(BaseTest.class);
 
-
-	ReadConfig readconfig=new ReadConfig();
-	public String baseURL=readconfig.getApplicationURL();
-	public String username=readconfig.getUseremail();
-	public String password=readconfig.getPassword();
-
 	@BeforeMethod
 	@Parameters("browser")
 	public void setupDriver(String browser) {
 		//TODO create a threadsafe DriverManager and use it to get driver
 		driver = DriverFactory.getDriver(browser);
-
-		System.out.println(new PropertyReaderImpl().getConfiguration().getUseremail());
 	}
 
 	@AfterMethod(alwaysRun = true)

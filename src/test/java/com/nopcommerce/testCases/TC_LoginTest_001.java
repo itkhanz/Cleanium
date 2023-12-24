@@ -2,6 +2,7 @@ package com.nopcommerce.testCases;
 
 import java.io.IOException;
 
+import com.nopcommerce.utils.properties.ConfigService;
 import com.nopcommerce.utils.screenshot.ScreenshotService;
 import com.nopcommerce.utils.screenshot.ScreenshotUtils;
 import org.testng.Assert;
@@ -15,13 +16,13 @@ import com.nopcommerce.pageObjects.LoginPage;
 	@Test
 	public void loginTest() throws InterruptedException, IOException
 	{
-		driver.get(baseURL);
+		driver.get(ConfigService.getBaseUrl());
 		
 		LoginPage lp=new LoginPage(driver);
-		lp.setUserName(username);
+		lp.setUserName(ConfigService.getUserEmail());
 		logger.info("User provided......"); //logger msg
 		
-		lp.setPassword(password);
+		lp.setPassword(ConfigService.getPassword());
 		logger.info("Password provided......");//logger msg
 		
 		
