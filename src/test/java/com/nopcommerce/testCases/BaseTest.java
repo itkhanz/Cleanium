@@ -1,8 +1,7 @@
 package com.nopcommerce.testCases;
 
-import com.nopcommerce.config.reader.PropertyReaderImpl;
 import com.nopcommerce.driver.DriverFactory;
-import com.nopcommerce.utilities.ReadConfig;
+import com.nopcommerce.driver.DriverManager;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
@@ -15,15 +14,14 @@ public class BaseTest {
 
 	@BeforeMethod
 	@Parameters("browser")
-	public void setupDriver(String browser) {
+	public void setup(String browser) {
 		//TODO create a threadsafe DriverManager and use it to get driver
-		driver = DriverFactory.getDriver(browser);
+		DriverFactory.initDriver(browser);
+		driver = DriverManager.getDriver();
 	}
 
 	@AfterMethod(alwaysRun = true)
-	void tearDownDriver() {
-		if (driver!=null) {
-			driver.quit();
-		}
+	void tearDown() {
+		DriverManager.terminateDriver();
 	}
 }

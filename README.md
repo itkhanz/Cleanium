@@ -128,6 +128,7 @@ Site under test: https://demo.nopcommerce.com/
 
 * create an abstraction utility (service layer) for the properties configuration
 * create a ConfigManager for all kind of configuration files
+* create a thread-safe Driver Manager to manage the driver instance throughout framework
 * 
 
 ### Part 9 - Managing Page Layers using Composition - Create Dynamic Xpath and avoid multiple elements

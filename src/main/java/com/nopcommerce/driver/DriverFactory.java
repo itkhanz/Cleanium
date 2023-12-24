@@ -8,7 +8,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 public class DriverFactory {
   private DriverFactory() {}
 
-  public static WebDriver getDriver(String browser) {
+  public static void initDriver(String browser) {
     WebDriver driver;
     switch (browser.toUpperCase()) {
       case "EDGE" -> driver = new EdgeDriver();
@@ -16,6 +16,6 @@ public class DriverFactory {
       case "FIREFOX" -> driver = new FirefoxDriver();
       default -> throw new RuntimeException(String.format("Invalid Browser %s provided", browser));
     }
-    return driver;
+    DriverManager.setDriver(driver);
   }
 }
