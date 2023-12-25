@@ -4,9 +4,9 @@ import com.itkhanz.core.element.actions.Actions;
 import org.openqa.selenium.By;
 
 public final class LoginPage {
-  private By emailInput = By.id("Email");
-  private By passwordInput = By.id("Password");
-  private By loginBtn = By.xpath("//button[contains(@class, 'login-button')]");
+  private static final By emailInput = By.id("Email");
+  private static final By passwordInput = By.id("Password");
+  private static final By loginBtn = By.xpath("//button[contains(@class, 'login-button')]");
 
   private LoginPage setEmail(String email) {
     Actions.onElement(emailInput).clear();

@@ -141,7 +141,6 @@ Site under test: https://demo.nopcommerce.com/
 * create element actions class to handle WebElement actions with waiting
 * Use IntelliJ context menu to generate Getters for By locators with builder pattern
 * split page into reusable components e.g. header, leftmenu, footer
-* 
 
 ### Part 10 - Enhanced Boilerplate Framework
 
@@ -250,6 +249,11 @@ JSUtils.scrollByPixel(0, 300);
 
 **Refactoring**
 
+* Use a single locator and construct XPath based on the dynamic value to fill form fields and locate the element
+* Return a Generic method from the Page method that returns different page depending upon the passed class
+  * This helps to get different pages based on different submenus
+* Make the locators private and final to save the memory in case of parallel execution
+* Add @Optional annotation to TestNG parameter to provide the default value to browser
 * 
 
 ### Part 12 - Struggling to manage Test Data Effectively in Selenium - Learn it now in 30 min

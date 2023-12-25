@@ -1,4 +1,4 @@
-package com.itkhanz.nopcommerce.pages.components;
+package com.itkhanz.nopcommerce.pages.components.submenus;
 
 import com.itkhanz.core.element.actions.Actions;
 import com.itkhanz.core.element.locator.LocatorBuilder;
