@@ -1,7 +1,7 @@
 package com.itkhanz.nopcommerce.pages;
 
 import com.itkhanz.core.element.actions.Actions;
-import com.itkhanz.core.element.locator.LocatorBuilder;
+import com.itkhanz.core.element.locator.utils.LocatorBuilder;
 import com.itkhanz.nopcommerce.pages.components.alerts.HasAlerts;
 import org.openqa.selenium.By;
 

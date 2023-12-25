@@ -1,6 +1,6 @@
 package com.itkhanz.core.element.wait;
 
-public enum WaitStrategy {
+public enum ElementWaitStrategy {
   CLICKABLE,
   PRESENCE,
   VISIBLE,

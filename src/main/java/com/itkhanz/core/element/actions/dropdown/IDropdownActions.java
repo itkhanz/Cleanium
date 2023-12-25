@@ -1,8 +1,8 @@
 package com.itkhanz.core.element.actions.dropdown;
 
+import com.itkhanz.core.element.wait.ElementWaitStrategy;
 import com.itkhanz.core.element.wait.WaitDuration;
 import com.itkhanz.core.element.wait.WaitFactory;
-import com.itkhanz.core.element.wait.WaitStrategy;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
@@ -11,7 +11,7 @@ import java.util.List;
 
 public interface IDropdownActions {
   default Select getNativeSelect(By locator) {
-    return new Select(WaitFactory.performExplicitWait(WaitStrategy.CLICKABLE, WaitDuration.WAIT_MEDIUM, locator));
+    return new Select(WaitFactory.performExplicitWait(ElementWaitStrategy.CLICKABLE, WaitDuration.MEDIUM, locator));
   }
 
   List<WebElement> getOptions();

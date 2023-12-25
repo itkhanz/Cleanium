@@ -1,7 +1,7 @@
 package com.itkhanz.nopcommerce.pages;
 
-import com.itkhanz.nopcommerce.pages.components.submenus.LeftMenuComponent;
 import com.itkhanz.nopcommerce.pages.components.alerts.HasAlerts;
+import com.itkhanz.nopcommerce.pages.components.submenus.LeftMenuComponent;
 
 public class DashboardPage implements HasAlerts {
 

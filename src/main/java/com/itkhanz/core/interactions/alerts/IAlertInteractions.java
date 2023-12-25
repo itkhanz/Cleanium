@@ -7,7 +7,7 @@ import org.openqa.selenium.Alert;
 public interface IAlertInteractions {
 
   default Alert getNativeAlert() {
-    return WaitFactory.waitForAlert(WaitDuration.WAIT_MEDIUM);
+    return WaitFactory.waitForAlert(WaitDuration.MEDIUM);
   }
 
   String getText();

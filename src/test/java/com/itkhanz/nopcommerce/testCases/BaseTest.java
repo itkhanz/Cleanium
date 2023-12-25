@@ -25,6 +25,7 @@ public class BaseTest {
 		driver = DriverManager.getDriver();
 		Interactions.navigation().loadUrl(ConfigService.getBaseUrl());
 		Interactions.windows().maximize();
+
 	}
 
 	@AfterMethod(alwaysRun = true)

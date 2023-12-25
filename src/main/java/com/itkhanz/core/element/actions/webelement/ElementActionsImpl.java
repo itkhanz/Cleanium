@@ -1,9 +1,9 @@
 package com.itkhanz.core.element.actions.webelement;
 
 import com.itkhanz.core.driver.DriverManager;
+import com.itkhanz.core.element.wait.ElementWaitStrategy;
 import com.itkhanz.core.element.wait.WaitDuration;
 import com.itkhanz.core.element.wait.WaitFactory;
-import com.itkhanz.core.element.wait.WaitStrategy;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
@@ -20,7 +20,7 @@ public class ElementActionsImpl implements IElementActions {
 
   @Override
   public void click() {
-    if (WaitFactory.waitForElementTobeInteractable(WaitDuration.WAIT_MEDIUM, locator)) {
+    if (WaitFactory.waitForElementTobeInteractable(WaitDuration.MEDIUM, locator)) {
       DriverManager.getDriver().findElement(locator).click();
     }
 
@@ -30,7 +30,7 @@ public class ElementActionsImpl implements IElementActions {
   @Override
   public void type(String text) {
     WaitFactory
-      .performExplicitWait(WaitStrategy.VISIBLE, WaitDuration.WAIT_MEDIUM, locator)
+      .performExplicitWait(ElementWaitStrategy.VISIBLE, WaitDuration.MEDIUM, locator)
       .sendKeys(text);
 
     logger.info("performed sendKeys action on: {}", locator.toString());
@@ -45,7 +45,7 @@ public class ElementActionsImpl implements IElementActions {
   @Override
   public void clear() {
     WaitFactory
-      .performExplicitWait(WaitStrategy.VISIBLE, WaitDuration.WAIT_MEDIUM, locator)
+      .performExplicitWait(ElementWaitStrategy.VISIBLE, WaitDuration.MEDIUM, locator)
       .clear();
 
     logger.info("performed clear action on: {}", locator.toString());
@@ -56,7 +56,7 @@ public class ElementActionsImpl implements IElementActions {
     logger.info("Getting the attribute {} of {}", attr, locator.toString());
 
     return WaitFactory
-          .performExplicitWait(WaitStrategy.PRESENCE, WaitDuration.WAIT_MEDIUM, locator)
+          .performExplicitWait(ElementWaitStrategy.PRESENCE, WaitDuration.MEDIUM, locator)
           .getAttribute(attr);
   }
 
@@ -65,7 +65,7 @@ public class ElementActionsImpl implements IElementActions {
     logger.info("Getting the text of {}", locator.toString());
 
     return WaitFactory
-          .performExplicitWait(WaitStrategy.PRESENCE, WaitDuration.WAIT_MEDIUM, locator)
+          .performExplicitWait(ElementWaitStrategy.PRESENCE, WaitDuration.MEDIUM, locator)
           .getText();
   }
 
@@ -74,11 +74,11 @@ public class ElementActionsImpl implements IElementActions {
     logger.info("Checking if the element {} is displayed", locator.toString());
     try {
       return WaitFactory
-        .performExplicitWait(WaitStrategy.VISIBLE, WaitDuration.WAIT_MEDIUM, locator)
+        .performExplicitWait(ElementWaitStrategy.VISIBLE, WaitDuration.MEDIUM, locator)
         .isDisplayed();
     } catch (TimeoutException e) {
       e.printStackTrace();
-      logger.info("Element not visible within timeout of {} seconds", WaitDuration.WAIT_MEDIUM.getDurationSeconds());
+      logger.info("Element not visible within timeout of {} seconds", WaitDuration.MEDIUM.getDurationSeconds());
       return false;
     }
 
@@ -89,7 +89,7 @@ public class ElementActionsImpl implements IElementActions {
     logger.info("Checking if the element {} is enabled", locator.toString());
 
     return WaitFactory
-          .performExplicitWait(WaitStrategy.VISIBLE, WaitDuration.WAIT_MEDIUM, locator)
+          .performExplicitWait(ElementWaitStrategy.VISIBLE, WaitDuration.MEDIUM, locator)
           .isEnabled();
   }
 
@@ -98,7 +98,7 @@ public class ElementActionsImpl implements IElementActions {
     logger.info("Checking if the element {} is selected", locator.toString());
 
     return WaitFactory
-      .performExplicitWait(WaitStrategy.VISIBLE, WaitDuration.WAIT_MEDIUM, locator)
+      .performExplicitWait(ElementWaitStrategy.VISIBLE, WaitDuration.MEDIUM, locator)
       .isSelected();
   }
 

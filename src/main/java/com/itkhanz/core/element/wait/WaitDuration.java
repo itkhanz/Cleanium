@@ -1,9 +1,9 @@
 package com.itkhanz.core.element.wait;
 
 public enum WaitDuration {
-  WAIT_LONG(15L), // 15 seconds
-  WAIT_MEDIUM(10L), // 10 seconds
-  WAIT_SHORT(5L); // 5 seconds
+  LONG(15L), // 15 seconds
+  MEDIUM(10L), // 10 seconds
+  SHORT(5L); // 5 seconds
 
   private final long durationSeconds;
 

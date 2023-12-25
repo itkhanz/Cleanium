@@ -152,9 +152,28 @@ Site under test: https://demo.nopcommerce.com/
 * TODO: still needs lots of refinements like proper configuration, logging management, reporting etc.
 
 ```java
-//****************************************************************
+//***************************************************************
+//***************** Finding Element(s) **************************
+//***************************************************************
+By byLocator = By.xpath("//a");
+//By Default WaitStrategy.VISIBLE and WaitDuration.WAIT_MEDIUM are applied while finding the element
+//Supported Wait Durations are LONG (15s), MEDIUM (10s), and SHORT (5s)
+//******************* WebElement ********************************
+//Supported Wait Strategies for getElement() are PRESENCE,VISIBLE, CLICKABLE, NONE, HANDLE_STALE_ELEMENT
+Find.withLocator(byLocator).getElement();
+Find.withLocator(byLocator).getElement(WaitDuration.LONG);
+Find.withLocator(byLocator).getElement(ElementWaitStrategy.CLICKABLE);
+Find.withLocator(byLocator).getElement(ElementWaitStrategy.PRESENCE, WaitDuration.SHORT);
+//******************* List<WebElement> ***************************
+//Supported Wait Strategies for getAllElements() are PRESENCE, VISIBLE, NONE. Default is VISIBLE
+Find.withLocator(byLocator).getAllElements();
+Find.withLocator(byLocator).getAllElements(WaitDuration.MEDIUM);
+Find.withLocator(byLocator).getAllElements(ElementsWaitStrategy.PRESENCE);
+Find.withLocator(byLocator).getAllElements(ElementsWaitStrategy.PRESENCE, WaitDuration.SHORT);
+
+//***************************************************************
 //***************** Element Actions *****************************
-//****************************************************************
+//***************************************************************
 By elementLocator = By.id("xyz");
 Actions.onElement(elementLocator).click();
 Actions.onElement(elementLocator).clear();
@@ -252,15 +271,18 @@ JSUtils.scrollByPixel(0, 300);
 * Use a single locator and construct XPath based on the dynamic value to fill form fields and locate the element
 * Return a Generic method from the Page method that returns different page depending upon the passed class
   * This helps to get different pages based on different submenus
-* Make the locators private and final to save the memory in case of parallel execution
+* Make the locators static and final to save the memory in case of parallel execution
 * Add @Optional annotation to TestNG parameter to provide the default value to browser
+
+### Part 12 - Struggling to manage Test Data Effectively in Selenium
+
+**Refactoring**
+
 * 
 
-### Part 12 - Struggling to manage Test Data Effectively in Selenium - Learn it now in 30 min
+### Part 13 - Polymorphism in Selenium Framework | Choose different behaviors at runtime
 
-### Part 13 - Polymorphism in Selenium Framework | Choose different behaviors at runtime | Clean code |
-
-### Part 14 - Passing Behaviours To Test using Data Provider - Clean Code - Refactoring Selenium Code
+### Part 14 - Passing Behaviours To Test using Data Provider
 
 ###   
 

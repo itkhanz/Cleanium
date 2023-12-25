@@ -1,4 +1,4 @@
-package com.itkhanz.core.element.locator;
+package com.itkhanz.core.element.locator.utils;
 
 public final class LocatorBuilder {
   private LocatorBuilder() {}

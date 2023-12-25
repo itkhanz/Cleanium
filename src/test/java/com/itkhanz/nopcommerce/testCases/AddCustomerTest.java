@@ -15,7 +15,7 @@ public class AddCustomerTest extends BaseTest {
       .performLogin(ConfigService.getUserEmail(), ConfigService.getPassword())
       .navigateCustomersPage()
       .navigateToAddNewCustomerPage()
-      .addNewCustomer("abwcd@gmail.com", "xxx", "female")
+      .addNewCustomer("abdwcd@gmail.com", "xxx", "female")
       .getAlertText();
 
     System.out.println(alertText);

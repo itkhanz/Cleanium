@@ -1,8 +1,8 @@
 package com.itkhanz.core.interactions.actions;
 
+import com.itkhanz.core.element.wait.ElementWaitStrategy;
 import com.itkhanz.core.element.wait.WaitDuration;
 import com.itkhanz.core.element.wait.WaitFactory;
-import com.itkhanz.core.element.wait.WaitStrategy;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 
@@ -38,7 +38,7 @@ public class KeyboardActionsImpl extends AbstractKeyboardActions implements IKey
 
   @Override
   public KeyboardActionsImpl sendKeys(By byLocator, String keys) {
-    actions.sendKeys(WaitFactory.performExplicitWait(WaitStrategy.VISIBLE, WaitDuration.WAIT_MEDIUM, byLocator),keys);
+    actions.sendKeys(WaitFactory.performExplicitWait(ElementWaitStrategy.VISIBLE, WaitDuration.MEDIUM, byLocator),keys);
     return this;
   }
 
