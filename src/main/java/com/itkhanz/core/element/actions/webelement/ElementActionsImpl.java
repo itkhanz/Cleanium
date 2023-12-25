@@ -37,6 +37,12 @@ public class ElementActionsImpl implements IElementActions {
   }
 
   @Override
+  public void clickAndType(String text) {
+    this.click();
+    this.type(text);
+  }
+
+  @Override
   public void clear() {
     WaitFactory
       .performExplicitWait(WaitStrategy.VISIBLE, WaitDuration.WAIT_MEDIUM, locator)
