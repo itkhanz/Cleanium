@@ -5,7 +5,7 @@
 	
 	<listeners>
 	
-		<listener class-name="utilities.com.itkhanz.nopcommerce.Reporting" />
+		<listener class-name="com.itkhanz.nopcommerce.utilities.Reporting" />
 	</listeners>
 	
 	
@@ -15,7 +15,7 @@
 			  <!--<class name="testCases.com.itkhanz.nopcommerce.TC_LoginTest_001" /-->>
 			<!--<class name="testCases.com.itkhanz.nopcommerce.TC_LoginDDT_002" />-->
 			<!--<class name="testCases.com.itkhanz.nopcommerce.TC_AddCustomerTest_003" />-->
-			<class name="testCases.com.itkhanz.nopcommerce.AddCustomerTest" />
+			<class name="com.itkhanz.nopcommerce.testCases.AddCustomerTest" />
 
 		</classes>
 	</test>

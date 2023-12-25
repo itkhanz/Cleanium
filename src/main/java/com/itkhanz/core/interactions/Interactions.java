@@ -4,8 +4,8 @@ import com.itkhanz.core.interactions.actions.KeyboardActionsImpl;
 import com.itkhanz.core.interactions.actions.MouseActionsImpl;
 import com.itkhanz.core.interactions.alerts.AlertInteractionsImpl;
 import com.itkhanz.core.interactions.frames.FrameInteractionsImpl;
-import com.itkhanz.core.interactions.windows.WindowInteractionsImpl;
 import com.itkhanz.core.interactions.navigation.NavigationInteractionsImpl;
+import com.itkhanz.core.interactions.windows.WindowInteractionsImpl;
 
 public interface Interactions {
   static NavigationInteractionsImpl navigation() {

@@ -1,4 +1,4 @@
-package com.itkhanz.core.element.actions;
+package com.itkhanz.core.element.actions.webelement;
 
 import com.itkhanz.core.driver.DriverManager;
 import com.itkhanz.core.element.wait.WaitDuration;
@@ -9,10 +9,17 @@ import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.TimeoutException;
 
-public class ElementActions {
-  public static Logger logger = LogManager.getLogger(ElementActions.class);
+public class ElementActionsImpl implements IElementActions {
+  public static Logger logger = LogManager.getLogger(ElementActionsImpl.class);
 
-  public static void click(By locator) {
+  private final By locator;
+
+  public ElementActionsImpl(By elementLocator) {
+    this.locator = elementLocator;
+  }
+
+  @Override
+  public void click() {
     if (WaitFactory.waitForElementTobeInteractable(WaitDuration.WAIT_MEDIUM, locator)) {
       DriverManager.getDriver().findElement(locator).click();
     }
@@ -20,7 +27,8 @@ public class ElementActions {
     logger.info("performed click action on: {}", locator.toString());
   }
 
-  public static void type(By locator, String text) {
+  @Override
+  public void type(String text) {
     WaitFactory
       .performExplicitWait(WaitStrategy.VISIBLE, WaitDuration.WAIT_MEDIUM, locator)
       .sendKeys(text);
@@ -28,7 +36,8 @@ public class ElementActions {
     logger.info("performed sendKeys action on: {}", locator.toString());
   }
 
-  public static void clear(By locator) {
+  @Override
+  public void clear() {
     WaitFactory
       .performExplicitWait(WaitStrategy.VISIBLE, WaitDuration.WAIT_MEDIUM, locator)
       .clear();
@@ -36,7 +45,8 @@ public class ElementActions {
     logger.info("performed clear action on: {}", locator.toString());
   }
 
-  public static String getAttribute(By locator, String attr) {
+  @Override
+  public String getAttribute(String attr) {
     logger.info("Getting the attribute {} of {}", attr, locator.toString());
 
     return WaitFactory
@@ -44,7 +54,8 @@ public class ElementActions {
           .getAttribute(attr);
   }
 
-  public static String getText(By locator) {
+  @Override
+  public String getText() {
     logger.info("Getting the text of {}", locator.toString());
 
     return WaitFactory
@@ -52,7 +63,8 @@ public class ElementActions {
           .getText();
   }
 
-  public static boolean isDisplayed(By locator) {
+  @Override
+  public boolean isDisplayed() {
     logger.info("Checking if the element {} is displayed", locator.toString());
     try {
       return WaitFactory
@@ -66,7 +78,8 @@ public class ElementActions {
 
   }
 
-  public static boolean isEnabled(By locator) {
+  @Override
+  public boolean isEnabled() {
     logger.info("Checking if the element {} is enabled", locator.toString());
 
     return WaitFactory
@@ -74,7 +87,8 @@ public class ElementActions {
           .isEnabled();
   }
 
-  public static boolean isSelected(By locator) {
+  @Override
+  public boolean isSelected() {
     logger.info("Checking if the element {} is selected", locator.toString());
 
     return WaitFactory

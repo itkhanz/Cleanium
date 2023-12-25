@@ -1,12 +1,5 @@
 package com.itkhanz.nopcommerce.utilities;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
-import com.itkhanz.core.utils.screenshot.ScreenshotService;
-import org.testng.ITestContext;
-import org.testng.ITestResult;
-import org.testng.TestListenerAdapter;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
@@ -15,6 +8,13 @@ import com.aventstack.extentreports.markuputils.MarkupHelper;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.reporter.configuration.ChartLocation;
 import com.aventstack.extentreports.reporter.configuration.Theme;
+import com.itkhanz.core.utils.screenshot.ScreenshotService;
+import org.testng.ITestContext;
+import org.testng.ITestResult;
+import org.testng.TestListenerAdapter;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class Reporting extends TestListenerAdapter
 {

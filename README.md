@@ -157,14 +157,25 @@ Site under test: https://demo.nopcommerce.com/
 //***************** Element Actions *****************************
 //****************************************************************
 By elementLocator = By.id("xyz");
-ElementActions.click(elementLocator);
-ElementActions.type(elementLocator, "text");
-ElementActions.clear(elementLocator);
-String attr = ElementActions.getAttribute(elementLocator, "href");
-String text = ElementActions.getText(elementLocator);
-boolean isDisplayed = ElementActions.isDisplayed(elementLocator);
-boolean isEnabled = ElementActions.isEnabled(elementLocator);
-boolean isSelected = ElementActions.isSelected(elementLocator);
+Actions.onElement(elementLocator).click();
+Actions.onElement(elementLocator).clear();
+Actions.onElement(elementLocator).type();
+String attribute = Actions.onElement(elementLocator).getAttribute("href");
+String text = Actions.onElement(elementLocator).getText();
+boolean isDisplayed = Actions.onElement(elementLocator).isDisplayed();
+boolean isEnabled = Actions.onElement(elementLocator).isEnabled();
+boolean isSelected = Actions.onElement(elementLocator).isSelected();
+
+//****************************************************************
+//***************** Dropdown (Select) Actions ********************
+//****************************************************************
+By colors = By.id("oldSelectMenu");
+List<WebElement> allOptions = Actions.onDropdown(colors).getOptions();
+List<WebElement> allSelectedOptions = Actions.onDropdown(colors).getAllSelectedOptions();
+WebElement option  = Actions.onDropdown(colors).getFirstSelectedOption();
+Actions.onDropdown(colors).selectByIndex(4);
+Actions.onDropdown(colors).selectByValue("6");
+Actions.onDropdown(colors).selectByText("Magenta");
 
 //****************************************************************
 //***************** Alerts Actions *****************************

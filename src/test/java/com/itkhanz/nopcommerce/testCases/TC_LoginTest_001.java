@@ -1,8 +1,8 @@
 package com.itkhanz.nopcommerce.testCases;
 
+import com.itkhanz.core.utils.screenshot.ScreenshotService;
 import com.itkhanz.nopcommerce.pageObjects.LoginPage;
 import com.itkhanz.nopcommerce.utils.properties.ConfigService;
-import com.itkhanz.core.utils.screenshot.ScreenshotService;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
