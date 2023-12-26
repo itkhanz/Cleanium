@@ -1,4 +1,4 @@
-package com.itkhanz.nopcommerce.testCases;
+package com.itkhanz.nopcommerce.tests;
 
 import com.itkhanz.core.browser.BrowserManager;
 import com.itkhanz.core.driver.DriverFactory;
@@ -25,7 +25,6 @@ public class BaseTest {
 		driver = DriverManager.getDriver();
 		Interactions.navigation().loadUrl(ConfigService.getBaseUrl());
 		Interactions.windows().maximize();
-
 	}
 
 	@AfterMethod(alwaysRun = true)

@@ -2,7 +2,10 @@ package com.itkhanz.nopcommerce.utils.random;
 
 import org.apache.commons.lang3.RandomStringUtils;
 
+import java.util.Random;
+
 public final class RandomUtils {
+  private static final Random random = new Random();
   private RandomUtils() {}
 
   //Facade pattern: Add an abstract layer whenever using a third party libraries
@@ -12,6 +15,10 @@ public final class RandomUtils {
   static String getRandomString(int numOfDigits) {
     //perform the third party library change here
     return  RandomStringUtils.randomAlphabetic(numOfDigits);
+  }
+
+  static int getRandomBinary() {
+    return random.nextInt(2);  // Generates 0 or 1
   }
 
 }

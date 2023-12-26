@@ -1,4 +1,4 @@
-package com.itkhanz.nopcommerce.pageObjects;
+package com.itkhanz.nopcommerce.legacy.pageObjects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;

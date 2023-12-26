@@ -1,4 +1,4 @@
-package com.itkhanz.nopcommerce.utilities;
+package com.itkhanz.nopcommerce.legacy.utilities;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;

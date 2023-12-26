@@ -1,4 +1,4 @@
-package com.itkhanz.nopcommerce.testCases;
+package com.itkhanz.nopcommerce.tests;
 
 import com.itkhanz.nopcommerce.fixtures.UserDataProvider;
 import com.itkhanz.nopcommerce.entities.UserData;

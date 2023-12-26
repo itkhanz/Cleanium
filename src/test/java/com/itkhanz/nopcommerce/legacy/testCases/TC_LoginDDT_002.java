@@ -1,7 +1,7 @@
-package com.itkhanz.nopcommerce.testCases;
+package com.itkhanz.nopcommerce.legacy.testCases;
 
-import com.itkhanz.nopcommerce.pageObjects.LoginPage;
-import com.itkhanz.nopcommerce.utilities.XLUtils;
+import com.itkhanz.nopcommerce.legacy.pageObjects.LoginPage;
+import com.itkhanz.nopcommerce.legacy.utilities.XLUtils;
 import com.itkhanz.nopcommerce.utils.properties.ConfigService;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;

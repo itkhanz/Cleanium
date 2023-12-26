@@ -467,6 +467,8 @@ public final class LoginPage {
     assertThat(alertText).contains("The new customer has been added successfully");
   }
 ```
+* Add a new customer data using faker library to create fake email and passwords
+* To generate the gender(Male/Female), make use of java Random util to create random gender.
 
 ### Part 13 - Polymorphism in Selenium Framework | Choose different behaviors at runtime
 

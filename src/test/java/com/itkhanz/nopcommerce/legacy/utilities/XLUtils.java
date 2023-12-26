@@ -1,4 +1,4 @@
-package com.itkhanz.nopcommerce.utilities;
+package com.itkhanz.nopcommerce.legacy.utilities;
 
 import org.apache.poi.xssf.usermodel.*;
 
