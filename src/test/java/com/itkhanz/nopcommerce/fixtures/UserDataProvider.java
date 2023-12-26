@@ -12,19 +12,12 @@ import org.testng.annotations.DataProvider;
 public class UserDataProvider {
 
   @DataProvider
-  public static Object[][] getLoginData() {
+  public static Object[][] getUserData() {
 
-    LoginData loginData = TestDataReader.getUserByRole(Role.ADMIN);
+    LoginData loginData = UserDataProvider.createLoginData();
+    CustomerData customerData = UserDataProvider.createCustomerData();
 
-    CustomerData customerData = CustomerData
-      .builder()
-      .setEmail(FakerService.getEmail())
-      .setPassword(FakerService.getPassword())
-      .setGender(RandomService.getRandomGender())
-      .build();
-
-    UserData userData = UserData
-      .builder()
+    UserData userData = UserData.builder()
       .setLoginData(loginData)
       .setCustomerData(customerData)
       .build();
@@ -32,6 +25,27 @@ public class UserDataProvider {
     return new Object[][] {
       {userData}
     };
+  }
+
+
+  @DataProvider
+  public static Object[][] getLoginUserData() {
+    return new Object[][] {
+      { UserDataProvider.createLoginData() }
+    };
+  }
+
+  private static LoginData createLoginData() {
+    return TestDataReader.getUserByRole(Role.ADMIN);
+  }
+
+  private static CustomerData createCustomerData() {
+    return CustomerData
+      .builder()
+      .setEmail(FakerService.getEmail())
+      .setPassword(FakerService.getPassword())
+      .setGender(RandomService.getRandomGender())
+      .build();
   }
 
 }

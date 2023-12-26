@@ -11,7 +11,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class AddCustomerTest extends BaseTest {
 
-  @Test(dataProvider = "getLoginData", dataProviderClass = UserDataProvider.class)
+  @Test(dataProvider = "getUserData", dataProviderClass = UserDataProvider.class)
   public void test_add_customer(UserData userData) {
     String alertText = LoginPage.createUsing(userData.getLoginData())
                         .performLogin()
@@ -23,7 +23,7 @@ public class AddCustomerTest extends BaseTest {
     assertThat(alertText).contains(CustomerAlerts.SUCCESS_NEW_CUSTOMER_CREATED);
   }
 
-  @Test(dataProvider = "getLoginData", dataProviderClass = UserDataProvider.class)
+  @Test(dataProvider = "getUserData", dataProviderClass = UserDataProvider.class)
   public void test_add_customer_without_mandatory_fields(UserData userData) {
     String alertText = LoginPage.createUsing(userData.getLoginData())
                         .performLogin()
