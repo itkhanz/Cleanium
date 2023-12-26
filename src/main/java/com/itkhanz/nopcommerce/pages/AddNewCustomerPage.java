@@ -2,6 +2,7 @@ package com.itkhanz.nopcommerce.pages;
 
 import com.itkhanz.core.element.actions.Actions;
 import com.itkhanz.core.element.locator.utils.LocatorBuilder;
+import com.itkhanz.nopcommerce.entities.CustomerData;
 import org.apache.commons.lang3.StringUtils;
 import org.openqa.selenium.By;
 
@@ -32,8 +33,12 @@ public class AddNewCustomerPage {
     Actions.onElement(saveBtn).click();
   }
 
-  public CustomersPage addNewCustomer(String email, String password, String gender) {
-    this.setEmail(email).setPassword(password).setGender(gender).saveCustomer();
+  public CustomersPage addNewCustomer(CustomerData customerData) {
+    this
+      .setEmail(customerData.getEmail())
+      .setPassword(customerData.getPassword())
+      .setGender(customerData.getGender())
+      .saveCustomer();
     return new CustomersPage();
   }
 

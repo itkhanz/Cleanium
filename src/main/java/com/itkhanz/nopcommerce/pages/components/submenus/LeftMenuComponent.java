@@ -15,6 +15,7 @@ public final class LeftMenuComponent {
     return this;
   }
 
+  //This method returns different Page depending upon the submenu that is clicked to open so we use generics
   @SneakyThrows
   public <T> T openSubMenu(String subMenu, Class<T> cls) {
     String menuXpath = LocatorBuilder.buildLocatorString(subMenuLink,subMenu);

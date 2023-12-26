@@ -1,7 +1,8 @@
 package com.itkhanz.nopcommerce.testCases;
 
+import com.itkhanz.nopcommerce.fixtures.UserDataProvider;
+import com.itkhanz.nopcommerce.entities.UserData;
 import com.itkhanz.nopcommerce.pages.LoginPage;
-import com.itkhanz.nopcommerce.utils.properties.ConfigService;
 import org.testng.annotations.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -9,16 +10,15 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class AddCustomerTest extends BaseTest {
 
-  @Test
-  public void test_add_customer() {
-    String alertText = new LoginPage()
-      .performLogin(ConfigService.getUserEmail(), ConfigService.getPassword())
-      .navigateCustomersPage()
-      .navigateToAddNewCustomerPage()
-      .addNewCustomer("abdwcd@gmail.com", "xxx", "female")
-      .getAlertText();
+  @Test(dataProvider = "getLoginData", dataProviderClass = UserDataProvider.class)
+  public void test_add_customer(UserData userData) {
+    String alertText = LoginPage.createUsing(userData.getLoginData())
+                        .performLogin()
+                        .navigateCustomersPage()
+                        .navigateToAddNewCustomerPage()
+                        .addNewCustomer(userData.getCustomerData())
+                        .getAlertText();
 
-    System.out.println(alertText);
     assertThat(alertText).contains("The new customer has been added successfully");
   }
 }

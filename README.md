@@ -155,113 +155,113 @@ Site under test: https://demo.nopcommerce.com/
 //***************************************************************
 //***************** Finding Element(s) **************************
 //***************************************************************
-By byLocator = By.xpath("//a");
+By byLocator=By.xpath("//a");
 //By Default WaitStrategy.VISIBLE and WaitDuration.WAIT_MEDIUM are applied while finding the element
 //Supported Wait Durations are LONG (15s), MEDIUM (10s), and SHORT (5s)
 //******************* WebElement ********************************
 //Supported Wait Strategies for getElement() are PRESENCE,VISIBLE, CLICKABLE, NONE, HANDLE_STALE_ELEMENT
-Find.withLocator(byLocator).getElement();
-Find.withLocator(byLocator).getElement(WaitDuration.LONG);
-Find.withLocator(byLocator).getElement(ElementWaitStrategy.CLICKABLE);
-Find.withLocator(byLocator).getElement(ElementWaitStrategy.PRESENCE, WaitDuration.SHORT);
+  Find.withLocator(byLocator).getElement();
+  Find.withLocator(byLocator).getElement(WaitDuration.LONG);
+  Find.withLocator(byLocator).getElement(ElementWaitStrategy.CLICKABLE);
+  Find.withLocator(byLocator).getElement(ElementWaitStrategy.PRESENCE,WaitDuration.SHORT);
 //******************* List<WebElement> ***************************
 //Supported Wait Strategies for getAllElements() are PRESENCE, VISIBLE, NONE. Default is VISIBLE
-Find.withLocator(byLocator).getAllElements();
-Find.withLocator(byLocator).getAllElements(WaitDuration.MEDIUM);
-Find.withLocator(byLocator).getAllElements(ElementsWaitStrategy.PRESENCE);
-Find.withLocator(byLocator).getAllElements(ElementsWaitStrategy.PRESENCE, WaitDuration.SHORT);
+  Find.withLocator(byLocator).getAllElements();
+  Find.withLocator(byLocator).getAllElements(WaitDuration.MEDIUM);
+  Find.withLocator(byLocator).getAllElements(ElementsWaitStrategy.PRESENCE);
+  Find.withLocator(byLocator).getAllElements(ElementsWaitStrategy.PRESENCE,WaitDuration.SHORT);
 
 //***************************************************************
 //***************** Element Actions *****************************
 //***************************************************************
-By elementLocator = By.id("xyz");
-Actions.onElement(elementLocator).click();
-Actions.onElement(elementLocator).clear();
-Actions.onElement(elementLocator).type();
-String attribute = Actions.onElement(elementLocator).getAttribute("href");
-String text = Actions.onElement(elementLocator).getText();
-boolean isDisplayed = Actions.onElement(elementLocator).isDisplayed();
-boolean isEnabled = Actions.onElement(elementLocator).isEnabled();
-boolean isSelected = Actions.onElement(elementLocator).isSelected();
+  By elementLocator=By.id("xyz");
+  Actions.onElement(elementLocator).click();
+  Actions.onElement(elementLocator).clear();
+  Actions.onElement(elementLocator).type();
+  String attribute=Actions.onElement(elementLocator).getAttribute("href");
+  String text=Actions.onElement(elementLocator).getText();
+  boolean isDisplayed=Actions.onElement(elementLocator).isDisplayed();
+  boolean isEnabled=Actions.onElement(elementLocator).isEnabled();
+  boolean isSelected=Actions.onElement(elementLocator).isSelected();
 
 //****************************************************************
 //***************** Dropdown (Select) Actions ********************
 //****************************************************************
-By colors = By.id("oldSelectMenu");
-List<WebElement> allOptions = Actions.onDropdown(colors).getOptions();
-List<WebElement> allSelectedOptions = Actions.onDropdown(colors).getAllSelectedOptions();
-WebElement option  = Actions.onDropdown(colors).getFirstSelectedOption();
-Actions.onDropdown(colors).selectByIndex(4);
-Actions.onDropdown(colors).selectByValue("6");
-Actions.onDropdown(colors).selectByText("Magenta");
+  By colors=By.id("oldSelectMenu");
+  List<WebElement> allOptions=Actions.onDropdown(colors).getOptions();
+  List<WebElement> allSelectedOptions=Actions.onDropdown(colors).getAllSelectedOptions();
+  WebElement option=Actions.onDropdown(colors).getFirstSelectedOption();
+  Actions.onDropdown(colors).selectByIndex(4);
+  Actions.onDropdown(colors).selectByValue("6");
+  Actions.onDropdown(colors).selectByText("Magenta");
 
 //****************************************************************
 //***************** Alerts Actions *****************************
 //****************************************************************
-Interactions.alerts().accept();
-Interactions.alerts().dismiss();
-Interactions.alerts().type("hello");
-Interactions.alerts().getText();
+  Interactions.alerts().accept();
+  Interactions.alerts().dismiss();
+  Interactions.alerts().type("hello");
+  Interactions.alerts().getText();
 
 //****************************************************************
 //***************** Frames Actions *****************************
 //****************************************************************
-Interactions.frames().switchToFrameByID("email");
-Interactions.frames().switchToFrameByName("email");
-Interactions.frames().switchToFrameByIndex(2);
-Interactions.frames().switchToFrameByElement(By.xpath("//iframe"));
+  Interactions.frames().switchToFrameByID("email");
+  Interactions.frames().switchToFrameByName("email");
+  Interactions.frames().switchToFrameByIndex(2);
+  Interactions.frames().switchToFrameByElement(By.xpath("//iframe"));
 
 //****************************************************************
 //***************** Navigation Actions *****************************
 //****************************************************************
-Interactions.navigation().loadUrl(ConfigService.getBaseUrl());
-Interactions.navigation().refresh();
-Interactions.navigation().navigateBackward();
-Interactions.navigation().navigateForward();
+  Interactions.navigation().loadUrl(ConfigService.getBaseUrl());
+  Interactions.navigation().refresh();
+  Interactions.navigation().navigateBackward();
+  Interactions.navigation().navigateForward();
 
 //****************************************************************
 //***************** Windows Actions *****************************
 //****************************************************************
-Interactions.windows().getHandles();
-Interactions.windows().getHandle();
-Interactions.windows().switchTo("handleName");
-Interactions.windows().createAndSwitchToNewWindow();
-Interactions.windows().createAndSwitchToNewTab();
-Interactions.windows().maximize();
-Interactions.windows().minimize();
-Interactions.windows().fullscreen();
-Interactions.windows().setSize(1024, 768);
-Interactions.windows().getSize();
-Interactions.windows().close();
+  Interactions.windows().getHandles();
+  Interactions.windows().getHandle();
+  Interactions.windows().switchTo("handleName");
+  Interactions.windows().createAndSwitchToNewWindow();
+  Interactions.windows().createAndSwitchToNewTab();
+  Interactions.windows().maximize();
+  Interactions.windows().minimize();
+  Interactions.windows().fullscreen();
+  Interactions.windows().setSize(1024,768);
+  Interactions.windows().getSize();
+  Interactions.windows().close();
 
 
 //****************************************************************
 //***************** Mouse Actions *****************************
 //****************************************************************
-Interactions.mouse().click(By.id("locator"));
-Interactions.mouse().doubleClick(By.id("locator"));
-Interactions.mouse().contextClick(By.id("locator"));
-Interactions.mouse().clickAndHold(By.id("locator"));
-Interactions.mouse().hover(By.id("locator"));
+  Interactions.mouse().click(By.id("locator"));
+  Interactions.mouse().doubleClick(By.id("locator"));
+  Interactions.mouse().contextClick(By.id("locator"));
+  Interactions.mouse().clickAndHold(By.id("locator"));
+  Interactions.mouse().hover(By.id("locator"));
 
 //****************************************************************
 //***************** Keyboard Actions *****************************
 //****************************************************************
 // Select the Current Address using CTRL + A
-Interactions.keyboard().keyDown(Keys.CONTROL).sendKeys("a").keyUp(Keys.CONTROL).performActions();
+  Interactions.keyboard().keyDown(Keys.CONTROL).sendKeys("a").keyUp(Keys.CONTROL).performActions();
 // Copy the Current Address using CTRL + C
-Interactions.keyboard().keyDown(Keys.CONTROL).sendKeys("c").keyUp(Keys.CONTROL).performActions();
+  Interactions.keyboard().keyDown(Keys.CONTROL).sendKeys("c").keyUp(Keys.CONTROL).performActions();
 //Press the TAB Key to Switch Focus to Permanent Address
-Interactions.keyboard().sendKeys(Keys.TAB).performActions();
+  Interactions.keyboard().sendKeys(Keys.TAB).performActions();
 //Paste the Address in the Permanent Address field using CTRL + V
-Interactions.keyboard().keyDown(Keys.CONTROL).sendKeys("v").keyUp(Keys.CONTROL).performActions();
+  Interactions.keyboard().keyDown(Keys.CONTROL).sendKeys("v").keyUp(Keys.CONTROL).performActions();
 
 //****************************************************************
 //***************** Javascript Executor Utils *****************************
 //****************************************************************
-JSUtils.scrollToBottomOfPage();
-JSUtils.scrollElementIntoView(By.id("Syntax"));
-JSUtils.scrollByPixel(0, 300);
+  JSUtils.scrollToBottomOfPage();
+  JSUtils.scrollElementIntoView(By.id("Syntax"));
+  JSUtils.scrollByPixel(0,300);
 ```
 
 ### Part 11 - Using Generics as Method Return Type
@@ -270,7 +270,7 @@ JSUtils.scrollByPixel(0, 300);
 
 * Use a single locator and construct XPath based on the dynamic value to fill form fields and locate the element
 * Return a Generic method from the Page method that returns different page depending upon the passed class
-  * This helps to get different pages based on different submenus
+    * This helps to get different pages based on different submenus
 * Make the locators static and final to save the memory in case of parallel execution
 * Add @Optional annotation to TestNG parameter to provide the default value to browser
 
@@ -278,13 +278,205 @@ JSUtils.scrollByPixel(0, 300);
 
 **Refactoring**
 
-* 
+* Provide the data to TestNG Test via DataProvider.
+
+#### Approach 01
+
+* Pass the data using Object[][].
+* The problem with this approach is that if your test data has 100 columns/fields, then the test method parameters will
+  be 100.
+* This approach is therefore not good.
+
+```java
+  @DataProvider
+public static Object[][]getLoginData(){
+  return new Object[][]{
+  {"admin@yourstore.com","admin"}
+  };
+  }
+
+@Test(dataProvider = "getLoginData", dataProviderClass = UserDataProvider.class)
+public void addCustomerTest(String email,String password){
+  System.out.println(String.format("Email: %s, Password: %s",email,password));
+  }
+```
+
+#### Approach 02
+
+* Second approach is to return the HashMap or Map of key-value pairs. This helps to limit the number of method arguments
+  to 01 as all the fields will be stored in Map itself.
+* The problem with this approach is that,to fetch the value, you need to know the exact key.
+* Another problem is that the type of value could be int, String or another. To solve this, you can make it as `Object`
+  but then you need to be careful in future for operations such as typecasting etc.
+* Therefore, this approach is also not ideal
+
+````java
+  @DataProvider
+public static Object[][]getLoginData(){
+
+  Map<String, Object> loginDataMap=Map.ofEntries(
+  Map.entry("email","admin@yourstore.com"),
+  Map.entry("password","admin")
+  );
+
+  return new Object[][]{
+  {loginDataMap}
+  };
+  }
+
+@Test(dataProvider = "getLoginData", dataProviderClass = UserDataProvider.class)
+public void addCustomerTest(Map<String, Object> loginDataMap){
+  System.out.printf("Email: %s, Password: %s%n",loginDataMap.get("email"),loginDataMap.get("password"));
+  }
+````
+
+#### Approach 03
+
+* Another approach is to create a POJO (with builder pattern), and pass the POJO as method argument
+
+```java
+import lombok.Builder;
+import lombok.Getter;
+
+@Getter
+@Builder(setterPrefix = "set")
+public class UserData {
+  private String email;
+  private String password;
+}
+```
+
+* This helps to solve the problem of knowing beforehand the key, or return type as we can simply call the getter
+  rmethods.
+
+```java
+@DataProvider
+public static Object[][]getLoginData(){
+
+  UserData userData=UserData
+  .builder()
+  .setEmail("admin@yourstore.com")
+  .setPassword("admin")
+  .build();
+
+  return new Object[][]{
+  {userData}
+  };
+}
+
+@Test(dataProvider = "getLoginData", dataProviderClass = UserDataProvider.class)
+public void addCustomerTest(UserData userData){
+  System.out.printf("Email: %s, Password: %s%n",userData.getEmail(),userData.getPassword());
+  }
+```
+
+* You can also optimize this entity by creating a POJO with nested classes. For example, here a UserData parent class
+  consists of two entities LoginData, and CustomerData.
+
+```java
+
+@Getter
+@Builder(setterPrefix = "set")
+public class UserData {
+  private LoginData loginData;
+  private CustomerData customerData;
+}
+```
+
+* You can create the data for both and pass the parent class as a Test method argument.
+
+```java
+@DataProvider
+public static Object[][]getLoginData(){
+
+  LoginData loginData=LoginData.builder().setEmail("admin@yourstore.com").setPassword("admin").build();
+  CustomerData customerData=CustomerData.builder().setEmail("abc@gmail.com").setPassword("xxx").setGender("male").build();
+  UserData userData=UserData
+  .builder()
+  .setLoginData(loginData)
+  .setCustomerData(customerData)
+  .build();
+
+  return new Object[][]{
+    {userData}
+  };
+}
+
+@Test(dataProvider = "getLoginData", dataProviderClass = UserDataProvider.class)
+public void addCustomerTest(UserData userData){
+  System.out.printf("Email: %s, Password: %s%n",userData.getLoginData().getEmail(),userData.getLoginData().getPassword());
+  }
+```
+
+* To keep the methods clean, instead of passing the email, and password separately to the page method of performing
+  login, just pass the entity, and then extract the email and password within the login method itself.
+
+```java
+  public DashboardPage performLogin(LoginData loginData){
+  return setEmail(loginData.getEmail()).setPassword(loginData.getPassword()).clickLogin();
+  }
+```
+
+```java
+  @Test(dataProvider = "getLoginData", dataProviderClass = UserDataProvider.class)
+  public void test_add_customer(UserData userData){
+    String alertText=new LoginPage()
+      .performLogin(userData.getLoginData())
+      .navigateCustomersPage()
+      .navigateToAddNewCustomerPage()
+      .addNewCustomer(userData.getCustomerData())
+      .getAlertText();
+
+    assertThat(alertText).contains("The new customer has been added successfully");
+  }
+```
+
+* It is always good to create methods that does not accept any parameters. To refactor the existing `setEmail(String
+  email)`, and `setPassword(String password)` methods in our `LoginPage`, we create a parameterized constructor of LoginPage
+  and pass the test data at the time of creation of the LoginPage, so that the login data is accessible to the whole
+  page.
+* This allows all the methods in this page to have access to email and password without needing to pass them explicitly as parameter.
+* You can also go a step ahead, and create a helper static method that returns the new instance of LoginPage to make code more readable.
+```java
+public final class LoginPage {
+  private String email;
+  private String password;
+
+  private LoginPage(LoginData loginData) {
+    this.email = loginData.getEmail();
+    this.password = loginData.getPassword();
+  }
+
+  public static LoginPage createUsing(LoginData loginData) {
+    return new LoginPage(loginData);
+  }
+  
+  //locators and methods
+}
+```
+```java
+  @Test(dataProvider = "getLoginData", dataProviderClass = UserDataProvider.class)
+  public void test_add_customer(UserData userData) {
+    String alertText = LoginPage.createUsing(userData.getLoginData())
+                        .performLogin()
+                        .navigateCustomersPage()
+                        .navigateToAddNewCustomerPage()
+                        .addNewCustomer(userData.getCustomerData())
+                        .getAlertText();
+
+    assertThat(alertText).contains("The new customer has been added successfully");
+  }
+```
 
 ### Part 13 - Polymorphism in Selenium Framework | Choose different behaviors at runtime
 
+**Refactoring**
+
+* 
+
 ### Part 14 - Passing Behaviours To Test using Data Provider
 
-###   
+###        
 
 ###
 
