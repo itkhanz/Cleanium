@@ -1,7 +1,5 @@
 package com.itkhanz.nopcommerce.utils.random;
 
-import java.util.Optional;
-
 /*
 Abstract  layer on top of RandomUtils (which could be a third party library)
  */

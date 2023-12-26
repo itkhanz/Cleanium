@@ -288,17 +288,17 @@ By byLocator=By.xpath("//a");
 * This approach is therefore not good.
 
 ```java
-  @DataProvider
+@DataProvider
 public static Object[][]getLoginData(){
   return new Object[][]{
-  {"admin@yourstore.com","admin"}
+    {"admin@yourstore.com","admin"}
   };
-  }
+ }
 
 @Test(dataProvider = "getLoginData", dataProviderClass = UserDataProvider.class)
 public void addCustomerTest(String email,String password){
   System.out.println(String.format("Email: %s, Password: %s",email,password));
-  }
+}
 ```
 
 #### Approach 02
@@ -311,7 +311,7 @@ public void addCustomerTest(String email,String password){
 * Therefore, this approach is also not ideal
 
 ````java
-  @DataProvider
+@DataProvider
 public static Object[][]getLoginData(){
 
   Map<String, Object> loginDataMap=Map.ofEntries(
@@ -320,14 +320,14 @@ public static Object[][]getLoginData(){
   );
 
   return new Object[][]{
-  {loginDataMap}
+    {loginDataMap}
   };
-  }
+}
 
 @Test(dataProvider = "getLoginData", dataProviderClass = UserDataProvider.class)
 public void addCustomerTest(Map<String, Object> loginDataMap){
   System.out.printf("Email: %s, Password: %s%n",loginDataMap.get("email"),loginDataMap.get("password"));
-  }
+}
 ````
 
 #### Approach 03
@@ -362,12 +362,12 @@ public static Object[][]getLoginData(){
   return new Object[][]{
   {userData}
   };
-  }
+ }
 
 @Test(dataProvider = "getLoginData", dataProviderClass = UserDataProvider.class)
 public void addCustomerTest(UserData userData){
   System.out.printf("Email: %s, Password: %s%n",userData.getEmail(),userData.getPassword());
-  }
+}
 ```
 
 * You can also optimize this entity by creating a POJO with nested classes. For example, here a UserData parent class
@@ -398,14 +398,14 @@ public static Object[][]getLoginData(){
   .build();
 
   return new Object[][]{
-  {userData}
+    {userData}
   };
-  }
+}
 
 @Test(dataProvider = "getLoginData", dataProviderClass = UserDataProvider.class)
 public void addCustomerTest(UserData userData){
   System.out.printf("Email: %s, Password: %s%n",userData.getLoginData().getEmail(),userData.getLoginData().getPassword());
-  }
+}
 ```
 
 * To keep the methods clean, instead of passing the email, and password separately to the page method of performing
@@ -413,12 +413,12 @@ public void addCustomerTest(UserData userData){
 
 ```java
   public DashboardPage performLogin(LoginData loginData){
-  return setEmail(loginData.getEmail()).setPassword(loginData.getPassword()).clickLogin();
+    return setEmail(loginData.getEmail()).setPassword(loginData.getPassword()).clickLogin();
   }
 ```
 
 ```java
-  @Test(dataProvider = "getLoginData", dataProviderClass = UserDataProvider.class)
+@Test(dataProvider = "getLoginData", dataProviderClass = UserDataProvider.class)
 public void test_add_customer(UserData userData){
   String alertText=new LoginPage()
   .performLogin(userData.getLoginData())
@@ -428,7 +428,7 @@ public void test_add_customer(UserData userData){
   .getAlertText();
 
   assertThat(alertText).contains("The new customer has been added successfully");
-  }
+}
 ```
 
 * It is always good to create methods that does not accept any parameters. To refactor the existing `setEmail(String
@@ -460,7 +460,7 @@ public final class LoginPage {
 ```
 
 ```java
-  @Test(dataProvider = "getLoginData", dataProviderClass = UserDataProvider.class)
+@Test(dataProvider = "getLoginData", dataProviderClass = UserDataProvider.class)
 public void test_add_customer(UserData userData){
   String alertText=LoginPage.createUsing(userData.getLoginData())
   .performLogin()
@@ -470,7 +470,7 @@ public void test_add_customer(UserData userData){
   .getAlertText();
 
   assertThat(alertText).contains("The new customer has been added successfully");
-  }
+}
 ```
 
 * Add a new customer data using faker library to create fake email and passwords
@@ -485,11 +485,34 @@ public void test_add_customer(UserData userData){
 
 **Refactoring**
 
-* 
+* For a large project, split the page classes into different packages for better readibility and project structure.
+* Suppose you want to test the form by filling:
+    * all fields
+    * mandatory fields
+    * optional fields
+* This helps to validate the form for mandatory fields and check error in case of missing any optional field.
+* We broke down the AddNewCustomerPage into an Abstract class with all the locators, methods, and filling the form with
+  all fields.
+* We created an interface with abstract methods for filling the form fields with mandatory and optional fields to
+  validate the error.
+
+```java
+@Test(dataProvider = "getLoginData", dataProviderClass = UserDataProvider.class)
+public void test_add_customer_without_mandatory_fields(UserData userData){
+  String alertText=LoginPage.createUsing(userData.getLoginData())
+  .performLogin()
+  .navigateCustomersPage()
+  .navigateToAddNewCustomerPage(userData.getCustomerData())
+  .addNewCustomerWithOptionalFields()
+  .getAlertText();
+
+  assertThat(alertText).contains(CustomerAlerts.FAILURE_PROVIDE_VALID_EMAIL);
+}
+```
 
 ### Part 14 - Passing Behaviours To Test using Data Provider
 
-###         
+###            
 
 ###
 

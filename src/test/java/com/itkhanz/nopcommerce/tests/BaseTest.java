@@ -21,6 +21,7 @@ public class BaseTest {
 	@BeforeMethod
 	@Parameters("browser")
 	public void setup(@Optional("chrome") String browser) {
+		//TODO Add the capability to pass the browser via terminal
 		DriverFactory.initDriver(BrowserManager.getMatchingBrowser(browser));
 		driver = DriverManager.getDriver();
 		Interactions.navigation().loadUrl(ConfigService.getBaseUrl());
