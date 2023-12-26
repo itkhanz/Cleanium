@@ -293,12 +293,12 @@ public static Object[][]getLoginData(){
   return new Object[][]{
   {"admin@yourstore.com","admin"}
   };
-}
+  }
 
 @Test(dataProvider = "getLoginData", dataProviderClass = UserDataProvider.class)
 public void addCustomerTest(String email,String password){
   System.out.println(String.format("Email: %s, Password: %s",email,password));
-}
+  }
 ```
 
 #### Approach 02
@@ -327,7 +327,7 @@ public static Object[][]getLoginData(){
 @Test(dataProvider = "getLoginData", dataProviderClass = UserDataProvider.class)
 public void addCustomerTest(Map<String, Object> loginDataMap){
   System.out.printf("Email: %s, Password: %s%n",loginDataMap.get("email"),loginDataMap.get("password"));
-}
+  }
 ````
 
 #### Approach 03
@@ -362,12 +362,12 @@ public static Object[][]getLoginData(){
   return new Object[][]{
   {userData}
   };
-}
+  }
 
 @Test(dataProvider = "getLoginData", dataProviderClass = UserDataProvider.class)
 public void addCustomerTest(UserData userData){
   System.out.printf("Email: %s, Password: %s%n",userData.getEmail(),userData.getPassword());
-}
+  }
 ```
 
 * You can also optimize this entity by creating a POJO with nested classes. For example, here a UserData parent class
@@ -398,14 +398,14 @@ public static Object[][]getLoginData(){
   .build();
 
   return new Object[][]{
-    {userData}
+  {userData}
   };
-}
+  }
 
 @Test(dataProvider = "getLoginData", dataProviderClass = UserDataProvider.class)
 public void addCustomerTest(UserData userData){
   System.out.printf("Email: %s, Password: %s%n",userData.getLoginData().getEmail(),userData.getLoginData().getPassword());
-}
+  }
 ```
 
 * To keep the methods clean, instead of passing the email, and password separately to the page method of performing
@@ -413,30 +413,34 @@ public void addCustomerTest(UserData userData){
 
 ```java
   public DashboardPage performLogin(LoginData loginData){
-    return setEmail(loginData.getEmail()).setPassword(loginData.getPassword()).clickLogin();
+  return setEmail(loginData.getEmail()).setPassword(loginData.getPassword()).clickLogin();
   }
 ```
 
 ```java
   @Test(dataProvider = "getLoginData", dataProviderClass = UserDataProvider.class)
-  public void test_add_customer(UserData userData){
-    String alertText=new LoginPage()
-      .performLogin(userData.getLoginData())
-      .navigateCustomersPage()
-      .navigateToAddNewCustomerPage()
-      .addNewCustomer(userData.getCustomerData())
-      .getAlertText();
+public void test_add_customer(UserData userData){
+  String alertText=new LoginPage()
+  .performLogin(userData.getLoginData())
+  .navigateCustomersPage()
+  .navigateToAddNewCustomerPage()
+  .addNewCustomer(userData.getCustomerData())
+  .getAlertText();
 
-    assertThat(alertText).contains("The new customer has been added successfully");
+  assertThat(alertText).contains("The new customer has been added successfully");
   }
 ```
 
 * It is always good to create methods that does not accept any parameters. To refactor the existing `setEmail(String
-  email)`, and `setPassword(String password)` methods in our `LoginPage`, we create a parameterized constructor of LoginPage
+  email)`, and `setPassword(String password)` methods in our `LoginPage`, we create a parameterized constructor of
+  LoginPage
   and pass the test data at the time of creation of the LoginPage, so that the login data is accessible to the whole
   page.
-* This allows all the methods in this page to have access to email and password without needing to pass them explicitly as parameter.
-* You can also go a step ahead, and create a helper static method that returns the new instance of LoginPage to make code more readable.
+* This allows all the methods in this page to have access to email and password without needing to pass them explicitly
+  as parameter.
+* You can also go a step ahead, and create a helper static method that returns the new instance of LoginPage to make
+  code more readable.
+
 ```java
 public final class LoginPage {
   private String email;
@@ -450,25 +454,32 @@ public final class LoginPage {
   public static LoginPage createUsing(LoginData loginData) {
     return new LoginPage(loginData);
   }
-  
+
   //locators and methods
 }
 ```
+
 ```java
   @Test(dataProvider = "getLoginData", dataProviderClass = UserDataProvider.class)
-  public void test_add_customer(UserData userData) {
-    String alertText = LoginPage.createUsing(userData.getLoginData())
-                        .performLogin()
-                        .navigateCustomersPage()
-                        .navigateToAddNewCustomerPage()
-                        .addNewCustomer(userData.getCustomerData())
-                        .getAlertText();
+public void test_add_customer(UserData userData){
+  String alertText=LoginPage.createUsing(userData.getLoginData())
+  .performLogin()
+  .navigateCustomersPage()
+  .navigateToAddNewCustomerPage()
+  .addNewCustomer(userData.getCustomerData())
+  .getAlertText();
 
-    assertThat(alertText).contains("The new customer has been added successfully");
+  assertThat(alertText).contains("The new customer has been added successfully");
   }
 ```
+
 * Add a new customer data using faker library to create fake email and passwords
 * To generate the gender(Male/Female), make use of java Random util to create random gender.
+* You can further optimize the DataProvider and Excel test data with the usage of libraries:
+    * [Test Data Supplier](https://github.com/sskorol/test-data-supplier) helps to supply test data in a more flexible
+      way.
+    * [Poiji](https://github.com/ozlerhakan/poiji) is a tiny thread-safe Java library that provides one way mapping from
+      Excel sheets to Java classes.
 
 ### Part 13 - Polymorphism in Selenium Framework | Choose different behaviors at runtime
 
@@ -478,7 +489,7 @@ public final class LoginPage {
 
 ### Part 14 - Passing Behaviours To Test using Data Provider
 
-###        
+###         
 
 ###
 
