@@ -1,6 +1,6 @@
 package com.itkhanz.nopcommerce.pages.customer;
 
-public interface IAddNewCustomer {
+public interface IFillCustomerDetails {
   CustomersPage addNewCustomerWithMandatoryFields();
-  AddNewCustomerPage addNewCustomerWithOptionalFields();
+  CustomerDetailsPage addNewCustomerWithOptionalFields();
 }

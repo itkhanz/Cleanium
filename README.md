@@ -463,11 +463,11 @@ public final class LoginPage {
 @Test(dataProvider = "getLoginData", dataProviderClass = UserDataProvider.class)
 public void test_add_customer(UserData userData){
   String alertText=LoginPage.createUsing(userData.getLoginData())
-  .performLogin()
-  .navigateCustomersPage()
-  .navigateToAddNewCustomerPage()
-  .addNewCustomer(userData.getCustomerData())
-  .getAlertText();
+                            .performLogin()
+                            .navigateCustomersPage()
+                            .navigateToAddNewCustomerPage()
+                            .addNewCustomer(userData.getCustomerData())
+                            .getAlertText();
 
   assertThat(alertText).contains("The new customer has been added successfully");
 }
@@ -500,25 +500,28 @@ public void test_add_customer(UserData userData){
 @Test(dataProvider = "getLoginData", dataProviderClass = UserDataProvider.class)
 public void test_add_customer_without_mandatory_fields(UserData userData){
   String alertText=LoginPage.createUsing(userData.getLoginData())
-  .performLogin()
-  .navigateCustomersPage()
-  .navigateToAddNewCustomerPage(userData.getCustomerData())
-  .addNewCustomerWithOptionalFields()
-  .getAlertText();
+                            .performLogin()
+                            .navigateCustomersPage()
+                            .navigateToAddNewCustomerPage(userData.getCustomerData())
+                            .addNewCustomerWithOptionalFields()
+                            .getAlertText();
 
   assertThat(alertText).contains(CustomerAlerts.FAILURE_PROVIDE_VALID_EMAIL);
 }
 ```
 
-### Part 14 - Passing Behaviours To Test using Data Provider
+### Part 14 - Managing Test Data
 
-###            
+**Refactoring**
 
-###
+* You can also pass different behaviors via test provider so your test runs each time with different behavior
+* Read Excel Data from [Poiji](https://github.com/ozlerhakan/poiji) library that helps to map excel rows to POJOs
+* Create package-private abstract utilities, and service classes for each test data types
+* Expose TestDataReader utility class to end user to read the test data and hide the internals of reading method and library
 
 ## Resources
 
 * [Code Refactoring - Testing Mini Bytes](https://www.youtube.com/playlist?list=PL9ok7C7Yn9A9UGTiBDsbW9MZVHH_cgrDa)
 * [Starter Framework](https://github.com/pavanoltraining/nopCommerceV1/tree/master)
-* [Refactored Framework](https://github.com/amuthansakthivel/SeleniumFramework/tree/main)
-* []()
+* [TMB Refactored Framework](https://github.com/amuthansakthivel/SeleniumFramework/tree/main)
+* 

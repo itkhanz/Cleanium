@@ -1,10 +1,10 @@
-package com.itkhanz.nopcommerce.entities;
+package com.itkhanz.nopcommerce.demo;
 
 import com.poiji.annotation.ExcelCellName;
 import lombok.Getter;
 
 @Getter
-public class LoginData {
+public class User {
 
   @ExcelCellName("role")
   private String role;
@@ -14,4 +14,5 @@ public class LoginData {
 
   @ExcelCellName("password")
   private String password;
+
 }

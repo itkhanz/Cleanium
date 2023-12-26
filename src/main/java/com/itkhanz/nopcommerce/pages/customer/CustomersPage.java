@@ -9,10 +9,10 @@ import org.openqa.selenium.By;
 public class CustomersPage implements HasAlerts {
   private static final String addCustomerBtn = "//a[normalize-space()='%s']";
 
-  public AddNewCustomerPage navigateToAddNewCustomerPage(CustomerData customerData) {
+  public CustomerDetailsPage navigateToCustomerDetailsPage(CustomerData customerData) {
     String btnXpath = LocatorBuilder.buildLocatorString(addCustomerBtn, "Add new");
     Actions.onElement(By.xpath(btnXpath)).click();
-    return AddNewCustomerPage.withCustomer(customerData);
+    return CustomerDetailsPage.withCustomer(customerData);
   }
 
 }

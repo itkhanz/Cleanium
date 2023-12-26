@@ -16,7 +16,7 @@ public class DashboardPage implements HasAlerts {
     this.customersPage =  new CustomersPage();
   }
 
-  public CustomersPage navigateCustomersPage() {
+  public CustomersPage navigateToCustomersPage() {
     leftMenuComponent
       .openMainMenu("Customers")
       .openSubMenu("Customers", CustomersPage.class);

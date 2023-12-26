@@ -3,9 +3,10 @@ package com.itkhanz.nopcommerce.fixtures;
 import com.itkhanz.nopcommerce.entities.CustomerData;
 import com.itkhanz.nopcommerce.entities.LoginData;
 import com.itkhanz.nopcommerce.entities.UserData;
+import com.itkhanz.nopcommerce.enums.Role;
 import com.itkhanz.nopcommerce.utils.faker.FakerService;
-import com.itkhanz.nopcommerce.utils.properties.ConfigService;
 import com.itkhanz.nopcommerce.utils.random.RandomService;
+import com.itkhanz.nopcommerce.utils.readers.TestDataReader;
 import org.testng.annotations.DataProvider;
 
 public class UserDataProvider {
@@ -13,11 +14,7 @@ public class UserDataProvider {
   @DataProvider
   public static Object[][] getLoginData() {
 
-    LoginData loginData = LoginData
-      .builder()
-      .setEmail(ConfigService.getUserEmail())
-      .setPassword(ConfigService.getPassword())
-      .build();
+    LoginData loginData = TestDataReader.getUserByRole(Role.ADMIN);
 
     CustomerData customerData = CustomerData
       .builder()

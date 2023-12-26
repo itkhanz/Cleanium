@@ -5,7 +5,7 @@ import com.itkhanz.core.element.locator.utils.LocatorBuilder;
 import org.apache.commons.lang3.StringUtils;
 import org.openqa.selenium.By;
 
-public abstract class AbstractAddNewCustomerPage {
+public abstract class AbstractCustomerDetailsPage {
   protected String email;
   protected String password;
   protected String gender;
@@ -14,19 +14,19 @@ public abstract class AbstractAddNewCustomerPage {
   private static final String genderCheckboxId = "Gender_%s";
   private static final By saveBtn = By.xpath("//button[@name='save']");
 
-  protected AbstractAddNewCustomerPage setEmail() {
+  protected AbstractCustomerDetailsPage setEmail() {
     String elementXPath = LocatorBuilder.buildLocatorString(inputFieldXpath, "Email");
     Actions.onElement(By.xpath(elementXPath)).clickAndType(email);
     return this;
   }
 
-  protected AbstractAddNewCustomerPage setPassword() {
+  protected AbstractCustomerDetailsPage setPassword() {
     String elementXPath = LocatorBuilder.buildLocatorString(inputFieldXpath, "Password");
     Actions.onElement(By.xpath(elementXPath)).clickAndType(password);
     return this;
   }
 
-  protected AbstractAddNewCustomerPage setGender() {
+  protected AbstractCustomerDetailsPage setGender() {
     String elementID = LocatorBuilder.buildLocatorString(genderCheckboxId, StringUtils.capitalize(gender));
     Actions.onElement(By.id(elementID)).click();
     return this;

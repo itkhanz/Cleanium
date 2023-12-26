@@ -15,8 +15,8 @@ public class AddCustomerTest extends BaseTest {
   public void test_add_customer(UserData userData) {
     String alertText = LoginPage.createUsing(userData.getLoginData())
                         .performLogin()
-                        .navigateCustomersPage()
-                        .navigateToAddNewCustomerPage(userData.getCustomerData())
+                        .navigateToCustomersPage()
+                        .navigateToCustomerDetailsPage(userData.getCustomerData())
                         .addNewCustomer()
                         .getAlertText();
 
@@ -27,8 +27,8 @@ public class AddCustomerTest extends BaseTest {
   public void test_add_customer_without_mandatory_fields(UserData userData) {
     String alertText = LoginPage.createUsing(userData.getLoginData())
                         .performLogin()
-                        .navigateCustomersPage()
-                        .navigateToAddNewCustomerPage(userData.getCustomerData())
+                        .navigateToCustomersPage()
+                        .navigateToCustomerDetailsPage(userData.getCustomerData())
                         .addNewCustomerWithOptionalFields()
                         .getAlertText();
 
