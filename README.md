@@ -518,6 +518,8 @@ public void test_add_customer_without_mandatory_fields(UserData userData){
 * Read Excel Data from [Poiji](https://github.com/ozlerhakan/poiji) library that helps to map excel rows to POJOs
 * Create package-private abstract utilities, and service classes for each test data types
 * Expose TestDataReader utility class to end user to read the test data and hide the internals of reading method and library
+* Refactor the UserDataProvider, and move the PojoFactory to separate class to adhere SRP
+* 
 
 ## Resources
 
