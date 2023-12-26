@@ -293,12 +293,12 @@ public static Object[][]getLoginData(){
   return new Object[][]{
   {"admin@yourstore.com","admin"}
   };
-  }
+}
 
 @Test(dataProvider = "getLoginData", dataProviderClass = UserDataProvider.class)
 public void addCustomerTest(String email,String password){
   System.out.println(String.format("Email: %s, Password: %s",email,password));
-  }
+}
 ```
 
 #### Approach 02
@@ -327,7 +327,7 @@ public static Object[][]getLoginData(){
 @Test(dataProvider = "getLoginData", dataProviderClass = UserDataProvider.class)
 public void addCustomerTest(Map<String, Object> loginDataMap){
   System.out.printf("Email: %s, Password: %s%n",loginDataMap.get("email"),loginDataMap.get("password"));
-  }
+}
 ````
 
 #### Approach 03
@@ -367,7 +367,7 @@ public static Object[][]getLoginData(){
 @Test(dataProvider = "getLoginData", dataProviderClass = UserDataProvider.class)
 public void addCustomerTest(UserData userData){
   System.out.printf("Email: %s, Password: %s%n",userData.getEmail(),userData.getPassword());
-  }
+}
 ```
 
 * You can also optimize this entity by creating a POJO with nested classes. For example, here a UserData parent class
@@ -405,7 +405,7 @@ public static Object[][]getLoginData(){
 @Test(dataProvider = "getLoginData", dataProviderClass = UserDataProvider.class)
 public void addCustomerTest(UserData userData){
   System.out.printf("Email: %s, Password: %s%n",userData.getLoginData().getEmail(),userData.getLoginData().getPassword());
-  }
+}
 ```
 
 * To keep the methods clean, instead of passing the email, and password separately to the page method of performing
@@ -413,7 +413,7 @@ public void addCustomerTest(UserData userData){
 
 ```java
   public DashboardPage performLogin(LoginData loginData){
-  return setEmail(loginData.getEmail()).setPassword(loginData.getPassword()).clickLogin();
+    return setEmail(loginData.getEmail()).setPassword(loginData.getPassword()).clickLogin();
   }
 ```
 
