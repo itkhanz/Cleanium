@@ -5,7 +5,6 @@ import com.itkhanz.designpatterns.srp.instructor.pages.main.MainPage;
 import com.itkhanz.designpatterns.srp.instructor.pages.result.ResultPage;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 

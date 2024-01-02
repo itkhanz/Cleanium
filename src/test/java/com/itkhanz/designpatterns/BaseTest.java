@@ -18,7 +18,7 @@ public class BaseTest {
   }
 
 
-  @AfterMethod
+  @AfterMethod(alwaysRun = true)
   public void quitDriver() {
     Uninterruptibles.sleepUninterruptibly(3, TimeUnit.SECONDS);
     if (this.driver != null) {

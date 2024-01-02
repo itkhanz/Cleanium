@@ -12,6 +12,18 @@ WebDriver
 
 <img src="doc/testing-effort.PNG">
 
+* We can classify design patterns into 3 categories as shown below.
+* Creational Pattern (Object creation mechanism)
+  * Factory
+* Behavioral Pattern (Object with algorithms/ behavior)
+  * Strategy
+  * Temmplate method
+  * Command
+  * Execute Around
+* Structural Pattern (how to assemble objects and classes into larger structures)
+  * Decorator
+  * Proxy
+
 ## Single Responsibility Principle (SRP)
 
 * A class should have only one responsibility / one reason to change
@@ -75,4 +87,20 @@ public boolean isDisplayed(){
   navigation component has members only related to navigation bar and it does not contain any information about search
   widget or suggestions widget.
 * Any change will only happen in the corresponding widget class so this also adheres to loosely coupled principle.
+
+
+## Factory Pattern
+
+* create a new object without exposing an instantiation logic
+* refer to the newly created object using its common interface
+* For example, we refer to the chrome driver, firefox driver etc. through webdriver interface
+
+<img src="doc/factory/assignment.PNG">
+
 * 
+
+
+## Resources
+
+* [Gangs of Four (GoF) Design Patterns](https://www.digitalocean.com/community/tutorials/gangs-of-four-gof-design-patterns)
+* [Design Patterns: Elements of Reusable Object-Oriented Software](https://www.oreilly.com/library/view/design-patterns-elements/0201633612/)
