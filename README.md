@@ -97,7 +97,12 @@ public boolean isDisplayed(){
 
 <img src="doc/factory/assignment.PNG">
 
-* 
+* In the above example, we are using factory pattern to create different page classes based on supplied language.
+* Refined the instructor's solution more to incorporate alerts for cookies and added an AbstractPage
+* [WebDriver Management using Factory Pattern](https://www.vinsguru.com/selenium-webdriver-design-patterns-in-test-automation-factory-pattern/)
+* [Factory Pattern using Java 8 Supplier](https://www.vinsguru.com/selenium-webdriver-factory-design-pattern-using-java-8-supplier/)
+
+<img src="doc/factory/usage.PNG">
 
 
 ## Resources
