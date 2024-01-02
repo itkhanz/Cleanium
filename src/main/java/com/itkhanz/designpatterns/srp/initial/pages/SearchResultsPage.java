@@ -1,9 +1,9 @@
-package com.itkhanz.designpatterns.srp.pages;
+package com.itkhanz.designpatterns.srp.initial.pages;
 
-import com.itkhanz.designpatterns.srp.base.PageFactory;
-import com.itkhanz.designpatterns.srp.pages.components.SearchHeaderComponent;
-import com.itkhanz.designpatterns.srp.pages.components.SearchSuggestionsComponent;
-import com.itkhanz.designpatterns.srp.pages.components.SearchboxComponent;
+import com.itkhanz.designpatterns.srp.initial.base.PageFactory;
+import com.itkhanz.designpatterns.srp.initial.pages.components.SearchHeaderComponent;
+import com.itkhanz.designpatterns.srp.initial.pages.components.SearchSuggestionsComponent;
+import com.itkhanz.designpatterns.srp.initial.pages.components.SearchboxComponent;
 import org.openqa.selenium.By;
 
 public class SearchResultsPage extends BasePage{

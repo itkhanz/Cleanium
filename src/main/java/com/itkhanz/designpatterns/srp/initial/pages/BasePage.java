@@ -1,6 +1,6 @@
-package com.itkhanz.designpatterns.srp.pages;
+package com.itkhanz.designpatterns.srp.initial.pages;
 
-import com.itkhanz.designpatterns.srp.base.DriverManager;
+import com.itkhanz.designpatterns.srp.initial.base.DriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;

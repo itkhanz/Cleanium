@@ -1,4 +1,4 @@
-package com.itkhanz.designpatterns.srp.pages.popups;
+package com.itkhanz.designpatterns.srp.initial.pages.popups;
 
 import org.openqa.selenium.By;
 

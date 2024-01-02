@@ -1,7 +1,7 @@
-package com.itkhanz.designpatterns.srp.pages.components;
+package com.itkhanz.designpatterns.srp.initial.pages.components;
 
-import com.itkhanz.designpatterns.srp.base.PageFactory;
-import com.itkhanz.designpatterns.srp.pages.BasePage;
+import com.itkhanz.designpatterns.srp.initial.base.PageFactory;
+import com.itkhanz.designpatterns.srp.initial.pages.BasePage;
 import org.openqa.selenium.By;
 
 public class SearchboxComponent extends BasePage {

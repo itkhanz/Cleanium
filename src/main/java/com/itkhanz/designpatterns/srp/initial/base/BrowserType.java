@@ -1,4 +1,4 @@
-package com.itkhanz.designpatterns.srp.base;
+package com.itkhanz.designpatterns.srp.initial.base;
 
 public enum BrowserType {
   CHROME,

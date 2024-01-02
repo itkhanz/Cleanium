@@ -1,4 +1,4 @@
-package com.itkhanz.designpatterns.srp.base;
+package com.itkhanz.designpatterns.srp.initial.base;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;

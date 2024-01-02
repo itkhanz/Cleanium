@@ -1,13 +1,13 @@
-package com.itkhanz.designpatterns.srp;
+package com.itkhanz.designpatterns.srp.intial;
 
-import com.itkhanz.designpatterns.srp.base.BrowserType;
-import com.itkhanz.designpatterns.srp.base.DriverFactory;
-import com.itkhanz.designpatterns.srp.base.DriverManager;
+import com.itkhanz.designpatterns.srp.initial.base.BrowserType;
+import com.itkhanz.designpatterns.srp.initial.base.DriverFactory;
+import com.itkhanz.designpatterns.srp.initial.base.DriverManager;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
-public class BaseTest {
+class BaseTest {
   protected static WebDriver driver;
 
   @BeforeMethod

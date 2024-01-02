@@ -1,7 +1,7 @@
-package com.itkhanz.designpatterns.srp.base;
+package com.itkhanz.designpatterns.srp.initial.base;
 
 
-import com.itkhanz.designpatterns.srp.pages.BasePage;
+import com.itkhanz.designpatterns.srp.initial.pages.BasePage;
 import lombok.SneakyThrows;
 
 import java.util.HashMap;

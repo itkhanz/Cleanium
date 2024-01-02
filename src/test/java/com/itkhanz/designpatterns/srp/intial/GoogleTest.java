@@ -1,13 +1,13 @@
-package com.itkhanz.designpatterns.srp;
+package com.itkhanz.designpatterns.srp.intial;
 
-import com.itkhanz.designpatterns.srp.base.PageFactory;
-import com.itkhanz.designpatterns.srp.pages.HomePage;
-import com.itkhanz.designpatterns.srp.pages.SearchResultsPage;
-import com.itkhanz.designpatterns.srp.pages.components.SearchSuggestionsComponent;
+import com.itkhanz.designpatterns.srp.initial.base.PageFactory;
+import com.itkhanz.designpatterns.srp.initial.pages.HomePage;
+import com.itkhanz.designpatterns.srp.initial.pages.SearchResultsPage;
+import com.itkhanz.designpatterns.srp.initial.pages.components.SearchSuggestionsComponent;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-public class GoogleTest extends BaseTest{
+class GoogleTest extends BaseTest{
   private HomePage homePage;
   private SearchSuggestionsComponent searchSuggestionsComponent;
   private SearchResultsPage searchResultsPage;
