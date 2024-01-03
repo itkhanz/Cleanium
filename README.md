@@ -124,6 +124,10 @@ public boolean isDisplayed(){
 * we are changing the behavior of payment screen at run time by providing different implementations of `IPayemntOption`.
   In our tests we are using this interface so our tests and payment screen is not tied to specific payment method.
 * Initial solution shows how to achieve this using abstract class instead of interface.
+* Exercise 02:
+  * https://fly4.emirates.com/CAB/IBE/SearchAvailability.aspx
+
+<img src="doc/strategy/emirates.PNG">
 
 <img src="doc/strategy/usages.PNG">
 
