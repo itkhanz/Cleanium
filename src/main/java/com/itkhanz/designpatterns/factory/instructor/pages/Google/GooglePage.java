@@ -3,14 +3,10 @@ package com.itkhanz.designpatterns.factory.instructor.pages.Google;
 import com.google.common.util.concurrent.Uninterruptibles;
 import com.itkhanz.designpatterns.factory.instructor.pages.AbstractPage;
 import com.itkhanz.designpatterns.factory.instructor.pages.alerts.CookieAlert;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.time.Duration;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 

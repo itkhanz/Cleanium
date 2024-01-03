@@ -1,7 +1,7 @@
 package com.itkhanz.designpatterns.factory.initial.pages;
 
-import com.itkhanz.designpatterns.factory.initial.pages.home.FrenchHomePage;
 import com.itkhanz.designpatterns.factory.initial.pages.home.EnglishHomePage;
+import com.itkhanz.designpatterns.factory.initial.pages.home.FrenchHomePage;
 import com.itkhanz.designpatterns.factory.initial.pages.home.HomePage;
 import org.openqa.selenium.WebDriver;
 

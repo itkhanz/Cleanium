@@ -104,6 +104,15 @@ public boolean isDisplayed(){
 
 <img src="doc/factory/usage.PNG">
 
+## Strategy Pattern
+
+* Define a family of algorithms/ behaviors, encapsulate each one, and make them interchangeable
+* For example, a BluRay player can perform different actions depending upon the type of CD
+  * DVD
+  * BluRay
+* Exercise: Write a test to submit the order with different payment strategies
+  * https://vins-udemy.s3.amazonaws.com/ds/strategy.html
+* 
 
 ## Resources
 
