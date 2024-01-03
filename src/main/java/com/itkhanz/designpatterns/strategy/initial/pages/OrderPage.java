@@ -1,10 +1,6 @@
 package com.itkhanz.designpatterns.strategy.initial.pages;
 
-import com.itkhanz.designpatterns.strategy.initial.enums.PaymentMethod;
-import com.itkhanz.designpatterns.strategy.initial.pages.components.CreditCardComponent;
-import com.itkhanz.designpatterns.strategy.initial.pages.components.NetComponent;
 import com.itkhanz.designpatterns.strategy.initial.pages.components.PaymentComponent;
-import com.itkhanz.designpatterns.strategy.initial.pages.components.PaypalComponent;
 import com.itkhanz.designpatterns.strategy.initial.pojos.PaymentInfo;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
