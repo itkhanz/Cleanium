@@ -125,25 +125,41 @@ public boolean isDisplayed(){
   In our tests we are using this interface so our tests and payment screen is not tied to specific payment method.
 * Initial solution shows how to achieve this using abstract class instead of interface.
 * Exercise 02:
-  * https://fly4.emirates.com/CAB/IBE/SearchAvailability.aspx
+    * https://fly4.emirates.com/CAB/IBE/SearchAvailability.aspx
 
 <img src="doc/strategy/emirates.PNG">
 
 <img src="doc/strategy/usages.PNG">
-
 
 ## Command Pattern
 
 <img src="doc/command/goal.PNG">
 
 * Consider this site, where we have to validate the notification toast, and dismissal alert.
-  * https://vins-udemy.s3.amazonaws.com/ds/admin-template/admin-template.html
+    * https://vins-udemy.s3.amazonaws.com/ds/admin-template/admin-template.html
 * Conventional approach would like like this: we repeat the same steps in sequence
 
 <img src="doc/command/conventional.PNG">
 
 * To apply the command pattern, we create a validator that encapsulates the logic of validating these components.
 * Test classes will invoke these validators to perform the validation and assertions.
+
+## Template Method Pattern
+
+* Template method is a special case of factory pattern.
+
+<img src="doc/template/goal.PNG">
+
+<img src="doc/template/usage.PNG">
+
+* We create a shopping template for two websites i.e. OpenCart and Ebay.
+    * Both the sites follow a common sequence of steps to perform a buying process. Search product, select product, open
+      details page, and place order.
+    * For demo purposes, we automate till landing on the details page.
+* Both the Amazon and Ebay templates implement the abstract shopping template.
+* In template pattern, we can also include multiple screens in template class. For example, we added different screens
+  to the OpenCartShopping template and delegated the calls to page objects.
+
 
 ## Resources
 
