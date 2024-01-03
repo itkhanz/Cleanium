@@ -131,7 +131,30 @@ public boolean isDisplayed(){
 
 <img src="doc/strategy/usages.PNG">
 
+
+## Command Pattern
+
+* 
+
 ## Resources
 
 * [Gangs of Four (GoF) Design Patterns](https://www.digitalocean.com/community/tutorials/gangs-of-four-gof-design-patterns)
 * [Design Patterns: Elements of Reusable Object-Oriented Software](https://www.oreilly.com/library/view/design-patterns-elements/0201633612/)
+* [Selenium WebDriver – Factory Design Pattern Using Java 8 – Supplier](https://www.vinsguru.com/selenium-webdriver-factory-design-pattern-using-java-8-supplier/)
+* [Selenium WebDriver – Design Patterns in Test Automation – Factory Pattern](https://www.vinsguru.com/selenium-webdriver-design-patterns-in-test-automation-factory-pattern/)
+* [Selenium WebDriver – Design Patterns in Test Automation – Strategy Pattern](https://www.vinsguru.com/selenium-webdriver-design-patterns-in-test-automation-strategy-pattern/)
+* [Selenium WebDriver – Design Patterns in Test Automation – Template Method Pattern](https://www.vinsguru.com/selenium-webdriver-design-patterns-in-test-automation-template-method-pattern/)
+* [Selenium WebDriver – Design Patterns in Test Automation – Proxy Pattern](https://www.vinsguru.com/selenium-webdriver-design-patterns-in-test-automation-proxy-pattern/)
+* [Selenium WebDriver – Design Patterns in Test Automation – Decorator Design Pattern](https://www.vinsguru.com/selenium-webdriver-design-patterns-in-test-automation-decorator-design-pattern/)
+* [Selenium WebDriver – Design Patterns in Test Automation – Chain Of Responsibility Design Pattern](https://www.vinsguru.com/selenium-webdriver-design-patterns-in-test-automation-chain-of-responsibility-design-pattern/)
+* [Selenium WebDriver – Design Patterns in Test Automation – Execute Around Method Pattern](https://www.vinsguru.com/selenium-webdriver-execute-around/)
+
+### Tips and Tricks
+
+* [Selenium WebDriver – How To Design Business Workflows In Fluent Style](https://www.vinsguru.com/selenium-webdriver-how-to-design-test-business-workflows-in-fluent-style/)
+* [Selenium WebDriver – How To Design Tests & Test Data](https://www.vinsguru.com/selenium-webdriver-how-to-design-tests-test-data/)
+* [Selenium WebDriver – How To Handle Page Synchronization Using Awaitility](https://www.testautomationguru.com/selenium-webdriver-how-to-wait-for-expected-conditions-using-awaitility/)
+* [Selenium WebDriver – How To Improve Test Performance Using Java8 Stream](https://www.vinsguru.com/selenium-webdriver-improving-test-performance-using-java8-stream/)
+* [Selenium WebDriver – How To Handle Annoying Random Popup / Alerts](https://www.vinsguru.com/selenium-webdriver-how-to-handle-annoying-random-popup-alerts/)
+* [Selenium WebDriver – How To Automatically Switch Among Browser Windows](https://www.vinsguru.com/selenium-webdriver-automatic-switching-between-browser-windows-using-guice-method-interceptor/)
+* 
