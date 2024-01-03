@@ -14,15 +14,15 @@ WebDriver
 
 * We can classify design patterns into 3 categories as shown below.
 * Creational Pattern (Object creation mechanism)
-  * Factory
+    * Factory
 * Behavioral Pattern (Object with algorithms/ behavior)
-  * Strategy
-  * Temmplate method
-  * Command
-  * Execute Around
+    * Strategy
+    * Temmplate method
+    * Command
+    * Execute Around
 * Structural Pattern (how to assemble objects and classes into larger structures)
-  * Decorator
-  * Proxy
+    * Decorator
+    * Proxy
 
 ## Single Responsibility Principle (SRP)
 
@@ -88,7 +88,6 @@ public boolean isDisplayed(){
   widget or suggestions widget.
 * Any change will only happen in the corresponding widget class so this also adheres to loosely coupled principle.
 
-
 ## Factory Pattern
 
 * create a new object without exposing an instantiation logic
@@ -108,11 +107,25 @@ public boolean isDisplayed(){
 
 * Define a family of algorithms/ behaviors, encapsulate each one, and make them interchangeable
 * For example, a BluRay player can perform different actions depending upon the type of CD
-  * DVD
-  * BluRay
+    * DVD
+    * BluRay
+* [Google Text / Voice search using Strategy pattern](https://www.vinsguru.com/selenium-webdriver-design-patterns-in-test-automation-strategy-pattern/)
 * Exercise: Write a test to submit the order with different payment strategies
-  * https://vins-udemy.s3.amazonaws.com/ds/strategy.html
-* 
+    * https://vins-udemy.s3.amazonaws.com/ds/strategy.html
+
+* In conventional approach, we place a lot of if-else blocks to achieve the desired behavior based on payment option
+
+<img src="doc/strategy/conventional.PNG">
+
+* Factory patterns allows us to create an interface and choose the behavior at run time.
+
+<img src="doc/strategy/strategy.PNG">
+
+* we are changing the behavior of payment screen at run time by providing different implementations of `IPayemntOption`.
+  In our tests we are using this interface so our tests and payment screen is not tied to specific payment method.
+* Initial solution shows how to achieve this using abstract class instead of interface.
+
+<img src="doc/strategy/usages.PNG">
 
 ## Resources
 

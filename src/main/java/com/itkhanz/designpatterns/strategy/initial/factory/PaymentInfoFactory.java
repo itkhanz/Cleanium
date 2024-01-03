@@ -10,14 +10,14 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Supplier;
 
-public class PaymentFactory {
+public class PaymentInfoFactory {
 
   private static Map<PaymentMethod, Supplier<PaymentInfo>> paymentMapper = new HashMap<>();
 
   static {
-    paymentMapper.put(PaymentMethod.CREDIT_CARD, () -> PaymentInfo.builder().setCreditCardInfo(PaymentFactory.getCreditCardInfo()).build());
-    paymentMapper.put(PaymentMethod.NET_BANKING, () -> PaymentInfo.builder().setNetInfo(PaymentFactory.getNetInfo()).build());
-    paymentMapper.put(PaymentMethod.PAYPAL, () -> PaymentInfo.builder().setPayPalInfo(PaymentFactory.getPayPalInfo()).build());
+    paymentMapper.put(PaymentMethod.CREDIT_CARD, () -> PaymentInfo.builder().setCreditCardInfo(PaymentInfoFactory.getCreditCardInfo()).build());
+    paymentMapper.put(PaymentMethod.NET_BANKING, () -> PaymentInfo.builder().setNetInfo(PaymentInfoFactory.getNetInfo()).build());
+    paymentMapper.put(PaymentMethod.PAYPAL, () -> PaymentInfo.builder().setPayPalInfo(PaymentInfoFactory.getPayPalInfo()).build());
   }
   public static PaymentInfo getPaymentInfo(PaymentMethod paymentMethod) {
     return paymentMapper.get(paymentMethod).get();
