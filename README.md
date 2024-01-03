@@ -134,7 +134,16 @@ public boolean isDisplayed(){
 
 ## Command Pattern
 
-* 
+<img src="doc/command/goal.PNG">
+
+* Consider this site, where we have to validate the notification toast, and dismissal alert.
+  * https://vins-udemy.s3.amazonaws.com/ds/admin-template/admin-template.html
+* Conventional approach would like like this: we repeat the same steps in sequence
+
+<img src="doc/command/conventional.PNG">
+
+* To apply the command pattern, we create a validator that encapsulates the logic of validating these components.
+* Test classes will invoke these validators to perform the validation and assertions.
 
 ## Resources
 
