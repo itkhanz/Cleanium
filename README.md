@@ -90,6 +90,7 @@ public boolean isDisplayed(){
 
 ## Factory Pattern
 
+* The factory pattern takes out the responsibility of instantiating a object from the class to a Factory class.
 * create a new object without exposing an instantiation logic
 * refer to the newly created object using its common interface
 * For example, we refer to the chrome driver, firefox driver etc. through webdriver interface
@@ -106,6 +107,8 @@ public boolean isDisplayed(){
 ## Strategy Pattern
 
 * Define a family of algorithms/ behaviors, encapsulate each one, and make them interchangeable
+* Strategy pattern is used when we have multiple algorithm for a specific task and client decides the actual
+  implementation to be used at runtime.
 * For example, a BluRay player can perform different actions depending upon the type of CD
     * DVD
     * BluRay
@@ -133,6 +136,8 @@ public boolean isDisplayed(){
 
 ## Command Pattern
 
+* Command Pattern is used to implement lose coupling in a request-response model.
+
 <img src="doc/command/goal.PNG">
 
 * Consider this site, where we have to validate the notification toast, and dismissal alert.
@@ -147,6 +152,7 @@ public boolean isDisplayed(){
 ## Template Method Pattern
 
 * Template method is a special case of factory pattern.
+* used to create a template method stub and defer some of the steps of implementation to the subclasses.
 
 <img src="doc/template/goal.PNG">
 
@@ -160,6 +166,27 @@ public boolean isDisplayed(){
 * In template pattern, we can also include multiple screens in template class. For example, we added different screens
   to the OpenCartShopping template and delegated the calls to page objects.
 
+## Proxy pattern
+
+* Provide a surrogate or placeholder for another object to control access to it.
+* Provides a placeholder object instead of actual object and restricted access. Example, office Internet
+* Example, if you are running tests on multiple environments, then your test scripts contain many conditional statemenst
+  to execute or not certain steps based on how much previliges you have in certain environment.
+
+<img src="doc/proxy/usage.PNG">
+
+* Imagine we want to execute automated tests on this site: https://vins-udemy.s3.amazonaws.com/ds/strategy.html
+* we will not place order on production environment, so we apply proxy design pattern which allow us to achieve results
+  without conditionals in code.
+* We use the same code snippets for starter as used in the strategy pattern because the site is same.
+* We create an interface for OrderComponent that has abstract method for placing order which return order ID. Then we
+  create two classes to implement this order component interface, i.e. real and proxy.
+* Proxy component will check if the current environment belongs to excluded environments. If it is a higher environment
+  like stage or production, then we skip the buying order and return a static message. Else if it is lower environment,
+  we call the buying from real component.
+* In our page objects, we are generating a new instance of proxy component.
+* We do not have to change our test class from the strategy pattern except only adding the env system property. Proxy
+  component will handle the buying operation for us based on this environment.
 
 ## Resources
 
