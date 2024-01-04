@@ -8,6 +8,22 @@ WebDriver
   course [Design Patterns For SDET With Selenium](https://www.udemy.com/course/selenium-webdriver-and-design-patterns)
   by [Vinoth Selvaraj](https://www.vinsguru.com/vinoth-selvaraj/)
 
+- **Contents**
+  * [Single Responsibility Principle (SRP)](#single-responsibility-principle--srp-)
+  * [Factory Pattern](#factory-pattern)
+  * [Strategy Pattern](#strategy-pattern)
+  * [Command Pattern](#command-pattern)
+  * [Template Method Pattern](#template-method-pattern)
+  * [Proxy pattern](#proxy-pattern)
+  * [Execute Around Method Pattern](#execute-around-method-pattern)
+  * [Decorator Pattern](#decorator-pattern)
+    + [Decorator Pattern - Exercise 01](#decorator-pattern---exercise-01)
+    + [Decorator Pattern - Exercise 02](#decorator-pattern---exercise-02)
+  * [Resources](#resources)
+    + [Tips and Tricks](#tips-and-tricks)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
 <img src="doc/good-bad-code.PNG">
 
 <img src="doc/testing-effort.PNG">
