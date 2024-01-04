@@ -220,7 +220,7 @@ public boolean isDisplayed(){
 * Inside the methods, we can do some logging, and switching to frame.
 
 ```java
-      public void onFrameA(Consumer<FrameA> consumer){
+public void onFrameA(Consumer<FrameA> consumer){
   this.driver.switchTo().frame(a);
   consumer.accept(this.frameA);
   this.driver.switchTo().defaultContent();
@@ -236,10 +236,29 @@ public void frameTest(){
   this.mainPage.onFrameC(c->c.setAddress("address for FrameC"));
   this.mainPage.onFrameB(b->b.setMessage("this is for Frame B"));
   }
+
 ```
 
 * This allows us to be flexible and pass the behavior directly to the method without fetching the frame first.
-*
+
+## Decorator Pattern
+
+* The decorator design pattern is used to modify the functionality of an object at runtime.
+
+<img src="doc/decorator/goal.PNG">
+
+### Decorator Pattern - Exercise 01
+
+* https://vins-udemy.s3.amazonaws.com/ds/decorator.html
+* Depending upon the user role selection, we get different components on the screen
+
+### Decorator Pattern - Exercise 02
+
+* https://vins-udemy.s3.amazonaws.com/java/html/java8-payment-screen.html
+* Depending upon the validity of CC and promo code, different outcomes are possible for the order.
+* We use the decorator pattern to build different decorated functionalities to the PaymentScreenPage, and combine these
+  consumers to build our test case.
+
 
 ## Resources
 
