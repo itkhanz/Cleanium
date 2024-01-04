@@ -188,6 +188,59 @@ public boolean isDisplayed(){
 * We do not have to change our test class from the strategy pattern except only adding the env system property. Proxy
   component will handle the buying operation for us based on this environment.
 
+<img src="doc/proxy/diagram.PNG">
+
+## Execute Around Method Pattern
+
+* Typically used when we have to perform certain steps before and after performing any action.
+
+<img src="doc/executearound/goal.PNG/">
+
+<img src="doc/executearound/usage.PNG/">
+
+* Demo Website: https://vins-udemy.s3.amazonaws.com/ds/main.html
+    * We have to switch to the frame before performing element actions, and after we have to switch back to default
+      content.
+    * Traditional approach would look like this:
+
+    ```java
+      public FrameA getFrameA(){
+        this.driver.switchTo().defaultContent();
+        this.driver.switchTo().frame(a);
+        return frameA;
+      }
+    
+    @Test
+    public void frameTest(){
+      this.mainPage.getFrameA().setFirstName("abc");
+    }
+    ```
+* Above approach will not work if we want to store the frame inside variable and perform actions on different frames.
+* We can make use of functional style programming with Consumers and pass behavior or action to the method itself.
+* Inside the methods, we can do some logging, and switching to frame.
+
+```java
+      public void onFrameA(Consumer<FrameA> consumer){
+  this.driver.switchTo().frame(a);
+  consumer.accept(this.frameA);
+  this.driver.switchTo().defaultContent();
+  }
+
+@Test
+public void frameTest(){
+  this.mainPage.goTo();
+  this.mainPage.onFrameA(a->{
+  a.setFirstName("fn1");
+  a.setMessage("I am going to fill text area");
+  });
+  this.mainPage.onFrameC(c->c.setAddress("address for FrameC"));
+  this.mainPage.onFrameB(b->b.setMessage("this is for Frame B"));
+  }
+```
+
+* This allows us to be flexible and pass the behavior directly to the method without fetching the frame first.
+*
+
 ## Resources
 
 * [Gangs of Four (GoF) Design Patterns](https://www.digitalocean.com/community/tutorials/gangs-of-four-gof-design-patterns)
