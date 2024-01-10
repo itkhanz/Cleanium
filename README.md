@@ -51,3 +51,26 @@ WebDriver
 
 <img src="doc/poly-summary.PNG">
 
+## Lambda
+
+* Lambda expression is basically an implementation of interface. Interface must contain only one abstract method to act
+  as functional interface.
+* SAM (Single Abstract Method) -> `@FunctionalInterface` annotation makes the interface to have only one abstract method to act as lambda.
+* Functional programming is a way of building software by using pure functions and by avoiding state sharing and side-effects.
+  * shared state: a variable being shared by more than 1 function
+  * side effect: function modifies the variable
+* Pure function
+  * function output should stay consistent for the given input for all the threads
+* Function as first-class object
+  * ability to assign function to a variable - having a reference of a function
+* Higher-order function
+  * A method which receives another function as a parameter is a higher order function
+* Method References
+  * Single line lambda expression which call existing methods that can be rewritten using method references
+  * If you are going to pass the data to another method, then you can rewrite it simply as method reference
+  * compact and easy to read
+
+<img src="doc/method-ref.PNG">
+
+<img src="doc/lambdas.PNG">
+
