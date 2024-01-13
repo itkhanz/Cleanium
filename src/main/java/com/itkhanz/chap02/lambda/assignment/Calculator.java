@@ -1,12 +1,12 @@
-package com.itkhanz.assignment.calculator;
+package com.itkhanz.chap02.lambda.assignment;
 
-public class Calculator {
+class Calculator {
 
   public static void main(String[] args) {
     MathOperation add = Integer::sum;
-    MathOperation subtract = (a,b) -> a - b;
-    MathOperation multiply = (a,b) -> a * b;
-    MathOperation divide = (a,b) -> a / b;
+    MathOperation subtract = (a, b) -> a - b;
+    MathOperation multiply = (a, b) -> a * b;
+    MathOperation divide = (a, b) -> a / b;
 
     //Test Data: 5 + 2 - 3 * 7 + 2 / 3
     int onScreenNum = 0;

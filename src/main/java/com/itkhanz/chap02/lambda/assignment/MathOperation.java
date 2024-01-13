@@ -1,4 +1,4 @@
-package com.itkhanz.assignment.calculator;
+package com.itkhanz.chap02.lambda.assignment;
 
 @FunctionalInterface
 public interface MathOperation {
