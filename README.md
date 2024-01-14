@@ -156,6 +156,27 @@ WebDriver
 
 <img src="doc/stream-source-summary.PNG">
 
+## Java 9
+
+* `takeWhile` 
+  * keep processing stream till the conditions is met
+  * similar to doWhile loop
+* `dropWhile`
+  * skips the stream processing until condition is met
+* Immutable list, set, map
+* JShell
+
+<img src="doc/java9-stream.PNG">
+
+<img src="doc/java9-collection.PNG">
+
+
+
+## Java 10
+
+## Java 11
+
+## Java 12
 
 
 

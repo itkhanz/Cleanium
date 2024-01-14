@@ -20,12 +20,18 @@ public class DriverFactory {
     return new FirefoxDriver();
   };
 
-  private static final Map<String, Supplier<WebDriver>> DRIVER_MAP = new HashMap<>();
+  /*private static final Map<String, Supplier<WebDriver>> DRIVER_MAP = new HashMap<>();
 
   static {
     DRIVER_MAP.put("chrome", chromeSupplier);
     DRIVER_MAP.put("firefox", firefoxSupplier);
-  }
+  }*/
+
+  //Java 09 Immutable map
+  private static final Map<String, Supplier<WebDriver>> DRIVER_MAP = Map.ofEntries(
+    Map.entry("chrome", chromeSupplier),
+    Map.entry("firefox", firefoxSupplier)
+  );
 
 
   public static WebDriver getDriver(String browser){
