@@ -8,7 +8,6 @@ import org.testng.annotations.*;
 
 import java.util.List;
 import java.util.function.Function;
-import java.util.function.Predicate;
 
 public class FunctionTest {
   private WebDriver driver;

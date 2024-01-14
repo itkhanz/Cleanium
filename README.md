@@ -110,3 +110,54 @@ WebDriver
 
 <img src="doc/assignment-funinterfaces.PNG">
 
+## Stream API
+
+* All the elements in collect go through the stream line one by one. Each element goes through the whole stream pipeline
+  first, and then next element goes and so-on.
+
+<img src="doc/streams-intro.PNG">
+
+<img src="doc/stream-how-it-works.PNG">
+
+<img src="doc/stream-ops.PNG">
+
+<img src="doc/stream-intermediate-ops.PNG">
+
+* `sorted()` works differently. In order to sort the elements, it needs to know all the elements upfront.
+    * After it has sorted the elements, then it will let the elements flow through the pipeline.
+* stream does not throw null pointer exception in case of empty list. It only works if there is a non empty collection.
+* Checkbox Selection assignment
+    * https://vins-udemy.s3.amazonaws.com/java/html/java8-stream-table.html
+    * select checkboxes based on gender
+
+<img src="doc/stream-flatmap.PNG">
+
+<img src="doc/stream-terminal-ops.PNG">
+
+<img src="doc/stream-collect.PNG">
+
+* [Differences of Java 16's Stream.toList() and Stream.collect(Collectors.toList())?](https://stackoverflow.com/questions/65969919/differences-of-java-16s-stream-tolist-and-stream-collectcollectors-tolist)
+
+<img src="doc/stream-parallel.PNG">
+
+<img src="doc/stream-source.PNG">
+
+<img src="doc/comparator.PNG">
+
+<img src="doc/streams-primitive.PNG">
+
+<img src="doc/stream-summary.PNG">
+
+<img src="doc/stream-intermediate-ops-summary.PNG">
+
+<img src="doc/stream-terminal-ops-summary.PNG">
+
+<img src="doc/stream-comparator-summary.PNG">
+
+<img src="doc/stream-source-summary.PNG">
+
+
+
+
+
+
