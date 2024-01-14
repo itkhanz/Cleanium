@@ -176,8 +176,11 @@ WebDriver
 
 ## Java 11
 
+<img src="doc/java11.PNG">
+
 ## Java 12
 
+<img src="doc/java12.PNG">
 
 
 
