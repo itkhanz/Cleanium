@@ -170,9 +170,9 @@ WebDriver
 
 <img src="doc/java9-collection.PNG">
 
-
-
 ## Java 10
+
+<img src="doc/java10-summary.PNG">
 
 ## Java 11
 
